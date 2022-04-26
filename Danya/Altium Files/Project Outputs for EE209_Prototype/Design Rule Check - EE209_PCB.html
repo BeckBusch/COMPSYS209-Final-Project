@@ -1,0 +1,418 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 8em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD21\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">9/17/2021</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">8:21:41 PM</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:01</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Sam\EE209_PCB.PcbDoc" class="file"><acronym title="C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Sam\EE209_PCB.PcbDoc">C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Sam\EE209_PCB.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">3</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">19</td></tr>
+</table>
+</td>
+</table><a name="ID3KBN43EGBWR0PWOMEBE4AHJAJNYDOZHX2VJ430MZUNVDGANULFGB"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID04QIEPILFR2FEM2M2R0KASVNYOYWUSEHQBV5ZXLDTKV1QRW3UDMB">Design contains shelved or modified (but not repoured) polygons. The result of DRC is not correct. Recommended to restore/repour all polygons and proceed with DRC again</a></td>
+<td class="column2">3</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">3</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDF02ZPEMVQUSUCHKBLZQPQINR4DFYTJPN5HY5K5C5QTKCT0XEI1MK">Clearance Constraint (Gap=0.4mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID1CWO2XIIJRAJM00VCVWGHJB3WL5U1SIGSRQ5BFME2UTHNITOZUQB">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDIETTICYECCFQBU5DYPHMBNUMTPXSDJOOMGBCZFKVY0EI1YA3GVKC">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDK0VJZADFU21RHNE45PKUZHNHVF3YJU1YYIVTLXLCPKVVVRE3BO1K">Modified Polygon (Allow modified: No), (Allow shelved: No)</a></td>
+<td class="column2">3</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDTISXYJYJH1UJBVDZWA4VGK43GMPWLBYD2YZIYDMGSWTLVOLJSTCE">Width Constraint (Min=0.4mm) (Max=10mm) (Preferred=0.6mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDPSB5BFFJO53JCSD3VWKOSYJYQBO3O0MRTECQOCOQRIJ1D5UGWW2K">Power Plane Connect Rule(Relief Connect )(Expansion=0.6mm) (Conductor Width=0.6mm) (Air Gap=0.4mm) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDOXOCLIHMVQGEOXZ05LBZKZ2VSHNMMO45ZSDQAHOJ5CCGFUYUKGNM">Minimum Annular Ring (Minimum=0.076mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDREAVVMWEH510FI444A31HBRFTMNKY4BN3JIVKAKLLF3UTLNV3U1I">Hole Size Constraint (Min=0.5mm) (Max=6mm) (All)</a></td>
+<td class="column2">13</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDW35VFCVXFBCQPFNJ1AFDAJLJPKAR3F2A5JATYDE4ERABE1WWIYML">Hole To Hole Clearance (Gap=0.254mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDSR1MW2ZMBHWOCSDAHCYQZKWPNK3B3F440A0HDSCGSEJU21V524DB">Minimum Solder Mask Sliver (Gap=0.1mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDEC1ERTQOVLQQCNEWK451TSM5UKAEQFL1AKW3Q0NVJ02W0JS3UVTC">Silk To Solder Mask (Clearance=0.1mm) (IsPad),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDH4KYBFEPGKR2BJULUQL0IKREQOCGFSUP1YUAF4DXLD50WBYTUIFK">Silk to Silk (Clearance=0.1mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID1C1HVYH4G2Q5BRM0PBWPT33SMV2MSEYMY0ROSJL5EO5YAWNKJDN">Net Antennae (Tolerance=0mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDWARBN0RBSNG0OYMXPSE5FDQYOL4SMN3XVOCEGXPYKI11TTP22YBB">Board Clearance Constraint (Gap=0mm) (All)</a></td>
+<td class="column2">3</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDUHBUOEU0J1LVI5IEMSAVRB21LKUOMZA2F4YAFGGDW1YKZLP3BJ2B">Height Constraint (Min=0mm) (Max=50mm) (Prefered=12.7mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">19</td>
+</tr>
+</table><br><a name="IDUNWR3OQ0OOE1BXJHORFROH3WXOGOBOXAIM4HMP53ZOMP1S2LMTN"><h2>Warnings</h2></a><a name="ID04QIEPILFR2FEM2M2R0KASVNYOYWUSEHQBV5ZXLDTKV1QRW3UDMB"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="warning">Design contains shelved or modified (but not repoured) polygons. The result of DRC is not correct. Recommended to restore/repour all polygons and proceed with DRC again</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Polygon named: 3 In net 5V On Top Layer</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Polygon named: NONET_L01_P001 On Top Layer</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Polygon named: NONET_L02_P004 In net GND On Bottom Layer</td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDK0VJZADFU21RHNE45PKUZHNHVF3YJU1YYIVTLXLCPKVVVRE3BO1K"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Modified Polygon (Allow modified: No), (Allow shelved: No)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Sam\EE209_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1760mil|Location2.X=5950mil|Location1.Y=1190.105mil|Location2.Y=5029.895mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Sam\EE209_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1760mil|Location2.X=5950mil|Location1.Y=1190.105mil|Location2.Y=5029.895mil|Absolute=True">Modified Polygon: Polygon Shelved  (3) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Sam\EE209_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=99999mil|Location2.X=0mil|Location1.Y=99999mil|Location2.Y=0mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Sam\EE209_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=99999mil|Location2.X=0mil|Location1.Y=99999mil|Location2.Y=0mil|Absolute=True">Modified Polygon: Polygon Shelved  (NONET_L01_P001) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Sam\EE209_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1780mil|Location2.X=5960mil|Location1.Y=1181.102mil|Location2.Y=5025.551mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Sam\EE209_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1780mil|Location2.X=5960mil|Location1.Y=1181.102mil|Location2.Y=5025.551mil|Absolute=True">Modified Polygon: Polygon Shelved  (NONET_L02_P004) on Bottom Layer </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDREAVVMWEH510FI444A31HBRFTMNKY4BN3JIVKAKLLF3UTLNV3U1I"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Hole Size Constraint (Min=0.5mm) (Max=6mm) (All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Sam\EE209_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4091.875mil|Location2.X=4108.125mil|Location1.Y=2851.875mil|Location2.Y=2868.125mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Sam\EE209_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4091.875mil|Location2.X=4108.125mil|Location1.Y=2851.875mil|Location2.Y=2868.125mil|Absolute=True">Hole Size Constraint: (0.381mm &lt; 0.5mm) Pad Free-3(104.14mm,72.644mm) on Multi-Layer Actual Hole Size = 0.381mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Sam\EE209_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4721.875mil|Location2.X=4738.125mil|Location1.Y=3351.875mil|Location2.Y=3368.125mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Sam\EE209_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4721.875mil|Location2.X=4738.125mil|Location1.Y=3351.875mil|Location2.Y=3368.125mil|Absolute=True">Hole Size Constraint: (0.381mm &lt; 0.5mm) Pad Free-3(120.142mm,85.344mm) on Multi-Layer Actual Hole Size = 0.381mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Sam\EE209_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5161.875mil|Location2.X=5178.125mil|Location1.Y=3441.875mil|Location2.Y=3458.125mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Sam\EE209_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5161.875mil|Location2.X=5178.125mil|Location1.Y=3441.875mil|Location2.Y=3458.125mil|Absolute=True">Hole Size Constraint: (0.381mm &lt; 0.5mm) Pad Free-3(131.318mm,87.63mm) on Multi-Layer Actual Hole Size = 0.381mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Sam\EE209_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5212.426mil|Location2.X=5228.676mil|Location1.Y=3381.875mil|Location2.Y=3398.125mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Sam\EE209_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5212.426mil|Location2.X=5228.676mil|Location1.Y=3381.875mil|Location2.Y=3398.125mil|Absolute=True">Hole Size Constraint: (0.381mm &lt; 0.5mm) Pad Free-3(132.602mm,86.106mm) on Multi-Layer Actual Hole Size = 0.381mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Sam\EE209_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5281.875mil|Location2.X=5298.125mil|Location1.Y=4681.875mil|Location2.Y=4698.125mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Sam\EE209_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5281.875mil|Location2.X=5298.125mil|Location1.Y=4681.875mil|Location2.Y=4698.125mil|Absolute=True">Hole Size Constraint: (0.381mm &lt; 0.5mm) Pad Free-3(134.366mm,119.126mm) on Multi-Layer Actual Hole Size = 0.381mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Sam\EE209_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5281.875mil|Location2.X=5298.125mil|Location1.Y=3261.875mil|Location2.Y=3278.125mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Sam\EE209_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5281.875mil|Location2.X=5298.125mil|Location1.Y=3261.875mil|Location2.Y=3278.125mil|Absolute=True">Hole Size Constraint: (0.381mm &lt; 0.5mm) Pad Free-3(134.366mm,83.058mm) on Multi-Layer Actual Hole Size = 0.381mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Sam\EE209_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5361.875mil|Location2.X=5378.125mil|Location1.Y=2961.875mil|Location2.Y=2978.125mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Sam\EE209_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5361.875mil|Location2.X=5378.125mil|Location1.Y=2961.875mil|Location2.Y=2978.125mil|Absolute=True">Hole Size Constraint: (0.381mm &lt; 0.5mm) Pad Free-3(136.398mm,75.438mm) on Multi-Layer Actual Hole Size = 0.381mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Sam\EE209_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2981.875mil|Location2.X=2998.125mil|Location1.Y=4401.875mil|Location2.Y=4418.125mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Sam\EE209_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2981.875mil|Location2.X=2998.125mil|Location1.Y=4401.875mil|Location2.Y=4418.125mil|Absolute=True">Hole Size Constraint: (0.381mm &lt; 0.5mm) Pad Free-3(75.946mm,112.014mm) on Multi-Layer Actual Hole Size = 0.381mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Sam\EE209_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3401.875mil|Location2.X=3418.125mil|Location1.Y=3071.875mil|Location2.Y=3088.125mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Sam\EE209_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3401.875mil|Location2.X=3418.125mil|Location1.Y=3071.875mil|Location2.Y=3088.125mil|Absolute=True">Hole Size Constraint: (0.381mm &lt; 0.5mm) Pad Free-3(86.614mm,78.232mm) on Multi-Layer Actual Hole Size = 0.381mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Sam\EE209_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3621.875mil|Location2.X=3638.125mil|Location1.Y=2951.875mil|Location2.Y=2968.125mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Sam\EE209_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3621.875mil|Location2.X=3638.125mil|Location1.Y=2951.875mil|Location2.Y=2968.125mil|Absolute=True">Hole Size Constraint: (0.381mm &lt; 0.5mm) Pad Free-3(92.202mm,75.184mm) on Multi-Layer Actual Hole Size = 0.381mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Sam\EE209_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3901.875mil|Location2.X=3918.125mil|Location1.Y=3721.875mil|Location2.Y=3738.125mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Sam\EE209_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3901.875mil|Location2.X=3918.125mil|Location1.Y=3721.875mil|Location2.Y=3738.125mil|Absolute=True">Hole Size Constraint: (0.381mm &lt; 0.5mm) Pad Free-3(99.314mm,94.742mm) on Multi-Layer Actual Hole Size = 0.381mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Sam\EE209_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3464.375mil|Location2.X=3715.625mil|Location1.Y=1484.375mil|Location2.Y=1735.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Sam\EE209_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3464.375mil|Location2.X=3715.625mil|Location1.Y=1484.375mil|Location2.Y=1735.625mil|Absolute=True">Hole Size Constraint: (6.35mm &gt; 6mm) Pad P1-1(91.186mm,40.894mm) on Multi-Layer Actual Hole Size = 6.35mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Sam\EE209_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2564.375mil|Location2.X=2815.625mil|Location1.Y=1484.375mil|Location2.Y=1735.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Sam\EE209_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2564.375mil|Location2.X=2815.625mil|Location1.Y=1484.375mil|Location2.Y=1735.625mil|Absolute=True">Hole Size Constraint: (6.35mm &gt; 6mm) Pad P1-2(68.326mm,40.894mm) on Multi-Layer Actual Hole Size = 6.35mm</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDWARBN0RBSNG0OYMXPSE5FDQYOL4SMN3XVOCEGXPYKI11TTP22YBB"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Board Clearance Constraint (Gap=0mm) (All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Sam\EE209_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4282.938mil|Location2.X=4330.892mil|Location1.Y=5143.696mil|Location2.Y=5157.819mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Sam\EE209_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4282.938mil|Location2.X=4330.892mil|Location1.Y=5143.696mil|Location2.Y=5157.819mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.5mm) Between Board Edge And Track (108.966mm,118.745mm)(108.966mm,133.731mm) on Bottom Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Sam\EE209_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3807.938mil|Location2.X=3855.892mil|Location1.Y=5143.696mil|Location2.Y=5157.819mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Sam\EE209_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3807.938mil|Location2.X=3855.892mil|Location1.Y=5143.696mil|Location2.Y=5157.819mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.5mm) Between Board Edge And Track (96.901mm,118.803mm)(96.901mm,133.731mm) on Bottom Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Sam\EE209_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4045.438mil|Location2.X=4093.392mil|Location1.Y=5257.938mil|Location2.Y=5272.062mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Sam\EE209_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4045.438mil|Location2.X=4093.392mil|Location1.Y=5257.938mil|Location2.Y=5272.062mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.5mm) Between Board Edge And Track (96.901mm,133.731mm)(108.966mm,133.731mm) on Bottom Overlay </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>

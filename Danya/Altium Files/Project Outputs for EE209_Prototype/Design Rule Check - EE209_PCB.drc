@@ -1,0 +1,78 @@
+Protel Design System Design Rule Check
+PCB File : C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Sam\EE209_PCB.PcbDoc
+Date     : 9/17/2021
+Time     : 8:21:41 PM
+
+WARNING: Design contains shelved or modified (but not repoured) polygons. The result of DRC is not correct. Recommended to restore/repour all polygons and proceed with DRC again
+   Polygon named: 3 In net 5V On Top Layer
+   Polygon named: NONET_L01_P001 On Top Layer
+   Polygon named: NONET_L02_P004 In net GND On Bottom Layer
+
+Processing Rule : Clearance Constraint (Gap=0.4mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
+Rule Violations :0
+
+Processing Rule : Un-Routed Net Constraint ( (All) )
+Rule Violations :0
+
+Processing Rule : Modified Polygon (Allow modified: No), (Allow shelved: No)
+   Violation between Modified Polygon: Polygon Shelved  (3) on Top Layer 
+   Violation between Modified Polygon: Polygon Shelved  (NONET_L01_P001) on Top Layer 
+   Violation between Modified Polygon: Polygon Shelved  (NONET_L02_P004) on Bottom Layer 
+Rule Violations :3
+
+Processing Rule : Width Constraint (Min=0.4mm) (Max=10mm) (Preferred=0.6mm) (All)
+Rule Violations :0
+
+Processing Rule : Power Plane Connect Rule(Relief Connect )(Expansion=0.6mm) (Conductor Width=0.6mm) (Air Gap=0.4mm) (Entries=4) (All)
+Rule Violations :0
+
+Processing Rule : Minimum Annular Ring (Minimum=0.076mm) (All)
+Rule Violations :0
+
+Processing Rule : Hole Size Constraint (Min=0.5mm) (Max=6mm) (All)
+   Violation between Hole Size Constraint: (0.381mm < 0.5mm) Pad Free-3(104.14mm,72.644mm) on Multi-Layer Actual Hole Size = 0.381mm
+   Violation between Hole Size Constraint: (0.381mm < 0.5mm) Pad Free-3(120.142mm,85.344mm) on Multi-Layer Actual Hole Size = 0.381mm
+   Violation between Hole Size Constraint: (0.381mm < 0.5mm) Pad Free-3(131.318mm,87.63mm) on Multi-Layer Actual Hole Size = 0.381mm
+   Violation between Hole Size Constraint: (0.381mm < 0.5mm) Pad Free-3(132.602mm,86.106mm) on Multi-Layer Actual Hole Size = 0.381mm
+   Violation between Hole Size Constraint: (0.381mm < 0.5mm) Pad Free-3(134.366mm,119.126mm) on Multi-Layer Actual Hole Size = 0.381mm
+   Violation between Hole Size Constraint: (0.381mm < 0.5mm) Pad Free-3(134.366mm,83.058mm) on Multi-Layer Actual Hole Size = 0.381mm
+   Violation between Hole Size Constraint: (0.381mm < 0.5mm) Pad Free-3(136.398mm,75.438mm) on Multi-Layer Actual Hole Size = 0.381mm
+   Violation between Hole Size Constraint: (0.381mm < 0.5mm) Pad Free-3(75.946mm,112.014mm) on Multi-Layer Actual Hole Size = 0.381mm
+   Violation between Hole Size Constraint: (0.381mm < 0.5mm) Pad Free-3(86.614mm,78.232mm) on Multi-Layer Actual Hole Size = 0.381mm
+   Violation between Hole Size Constraint: (0.381mm < 0.5mm) Pad Free-3(92.202mm,75.184mm) on Multi-Layer Actual Hole Size = 0.381mm
+   Violation between Hole Size Constraint: (0.381mm < 0.5mm) Pad Free-3(99.314mm,94.742mm) on Multi-Layer Actual Hole Size = 0.381mm
+   Violation between Hole Size Constraint: (6.35mm > 6mm) Pad P1-1(91.186mm,40.894mm) on Multi-Layer Actual Hole Size = 6.35mm
+   Violation between Hole Size Constraint: (6.35mm > 6mm) Pad P1-2(68.326mm,40.894mm) on Multi-Layer Actual Hole Size = 6.35mm
+Rule Violations :13
+
+Processing Rule : Hole To Hole Clearance (Gap=0.254mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Minimum Solder Mask Sliver (Gap=0.1mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Silk To Solder Mask (Clearance=0.1mm) (IsPad),(All)
+Rule Violations :0
+
+Processing Rule : Silk to Silk (Clearance=0.1mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Net Antennae (Tolerance=0mm) (All)
+Rule Violations :0
+
+Processing Rule : Board Clearance Constraint (Gap=0mm) (All)
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.5mm) Between Board Edge And Track (108.966mm,118.745mm)(108.966mm,133.731mm) on Bottom Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.5mm) Between Board Edge And Track (96.901mm,118.803mm)(96.901mm,133.731mm) on Bottom Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.5mm) Between Board Edge And Track (96.901mm,133.731mm)(108.966mm,133.731mm) on Bottom Overlay 
+Rule Violations :3
+
+Processing Rule : Height Constraint (Min=0mm) (Max=50mm) (Prefered=12.7mm) (All)
+Rule Violations :0
+
+
+Violations Detected : 19
+Waived Violations : 0
+Time Elapsed        : 00:00:01

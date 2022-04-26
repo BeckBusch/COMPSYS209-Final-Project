@@ -1,0 +1,1813 @@
+Loaded 141 symbols
+Program header 0 , 2854 bytes of data at vaddr=0x00000000, paddr=0x00000000, flags=00000005 loading
+Program header 1 , 66 bytes of data at vaddr=0x00800100, paddr=0x00000b26, flags=00000006 loading
+Program header 2 , 106 bytes of data at vaddr=0x00800142, paddr=0x00800142, flags=00000006 loading
+COMPILE UNIT [00000D4B]
+ producer = "avr-libc 2.0.0"
+ statement list = 00000000
+ BASE TYPE [00000D54]
+  name = "uint8_t"
+  byte size = 00000001
+  encoding = 00000008
+ BASE TYPE [00000D5B]
+  name = "uint16_t"
+  byte size = 00000002
+  encoding = 00000007
+ ARRAY TYPE [00000D62]
+  type = REF 00000D54
+  SUBRANGE TYPE [00000D67]
+   type = REF 00000D5B
+   upper bound = 000003FF
+ VARIABLE [00000D6F]
+  name = "__eeprom"
+  decl file = 00000000
+  decl line = 00000000
+  type = REF 00000D62
+  external = 00000001
+  location (5 bytes) = 00810000 
+ VARIABLE [00000D81]
+  name = "UDR0"
+  decl file = 00000000
+  decl line = 00000000
+  type = REF 00000D54
+  external = 00000001
+  location (5 bytes) = 008000C6 
+ VARIABLE [00000D93]
+  name = "UCSR0A"
+  decl file = 00000000
+  decl line = 00000000
+  type = REF 00000D54
+  external = 00000001
+  location (5 bytes) = 008000C0 
+ VARIABLE [00000DA5]
+  name = "UCSR0B"
+  decl file = 00000000
+  decl line = 00000000
+  type = REF 00000D54
+  external = 00000001
+  location (5 bytes) = 008000C1 
+ VARIABLE [00000DB7]
+  name = "UCSR0C"
+  decl file = 00000000
+  decl line = 00000000
+  type = REF 00000D54
+  external = 00000001
+  location (5 bytes) = 008000C2 
+ VARIABLE [00000DC9]
+  name = "UBRR0"
+  decl file = 00000000
+  decl line = 00000000
+  type = REF 00000D5B
+  external = 00000001
+  location (5 bytes) = 008000C4 
+ VARIABLE [00000DDB]
+  name = "TWAMR"
+  decl file = 00000000
+  decl line = 00000000
+  type = REF 00000D54
+  external = 00000001
+  location (5 bytes) = 008000BD 
+ VARIABLE [00000DED]
+  name = "TWBR"
+  decl file = 00000000
+  decl line = 00000000
+  type = REF 00000D54
+  external = 00000001
+  location (5 bytes) = 008000B8 
+ VARIABLE [00000DFF]
+  name = "TWCR"
+  decl file = 00000000
+  decl line = 00000000
+  type = REF 00000D54
+  external = 00000001
+  location (5 bytes) = 008000BC 
+ VARIABLE [00000E11]
+  name = "TWSR"
+  decl file = 00000000
+  decl line = 00000000
+  type = REF 00000D54
+  external = 00000001
+  location (5 bytes) = 008000B9 
+ VARIABLE [00000E23]
+  name = "TWDR"
+  decl file = 00000000
+  decl line = 00000000
+  type = REF 00000D54
+  external = 00000001
+  location (5 bytes) = 008000BB 
+ VARIABLE [00000E35]
+  name = "TWAR"
+  decl file = 00000000
+  decl line = 00000000
+  type = REF 00000D54
+  external = 00000001
+  location (5 bytes) = 008000BA 
+ VARIABLE [00000E47]
+  name = "TIMSK1"
+  decl file = 00000000
+  decl line = 00000000
+  type = REF 00000D54
+  external = 00000001
+  location (5 bytes) = 0080006F 
+ VARIABLE [00000E59]
+  name = "TIFR1"
+  decl file = 00000000
+  decl line = 00000000
+  type = REF 00000D54
+  external = 00000001
+  location (5 bytes) = 00800036 
+ VARIABLE [00000E6B]
+  name = "TCCR1A"
+  decl file = 00000000
+  decl line = 00000000
+  type = REF 00000D54
+  external = 00000001
+  location (5 bytes) = 00800080 
+ VARIABLE [00000E7D]
+  name = "TCCR1B"
+  decl file = 00000000
+  decl line = 00000000
+  type = REF 00000D54
+  external = 00000001
+  location (5 bytes) = 00800081 
+ VARIABLE [00000E8F]
+  name = "TCCR1C"
+  decl file = 00000000
+  decl line = 00000000
+  type = REF 00000D54
+  external = 00000001
+  location (5 bytes) = 00800082 
+ VARIABLE [00000EA1]
+  name = "TCNT1"
+  decl file = 00000000
+  decl line = 00000000
+  type = REF 00000D5B
+  external = 00000001
+  location (5 bytes) = 00800084 
+ VARIABLE [00000EB3]
+  name = "OCR1A"
+  decl file = 00000000
+  decl line = 00000000
+  type = REF 00000D5B
+  external = 00000001
+  location (5 bytes) = 00800088 
+ VARIABLE [00000EC5]
+  name = "OCR1B"
+  decl file = 00000000
+  decl line = 00000000
+  type = REF 00000D5B
+  external = 00000001
+  location (5 bytes) = 0080008A 
+ VARIABLE [00000ED7]
+  name = "ICR1"
+  decl file = 00000000
+  decl line = 00000000
+  type = REF 00000D5B
+  external = 00000001
+  location (5 bytes) = 00800086 
+ VARIABLE [00000EE9]
+  name = "GTCCR"
+  decl file = 00000000
+  decl line = 00000000
+  type = REF 00000D54
+  external = 00000001
+  location (5 bytes) = 00800043 
+ VARIABLE [00000EFB]
+  name = "TIMSK2"
+  decl file = 00000000
+  decl line = 00000000
+  type = REF 00000D54
+  external = 00000001
+  location (5 bytes) = 00800070 
+ VARIABLE [00000F0D]
+  name = "TIFR2"
+  decl file = 00000000
+  decl line = 00000000
+  type = REF 00000D54
+  external = 00000001
+  location (5 bytes) = 00800037 
+ VARIABLE [00000F1F]
+  name = "TCCR2A"
+  decl file = 00000000
+  decl line = 00000000
+  type = REF 00000D54
+  external = 00000001
+  location (5 bytes) = 008000B0 
+ VARIABLE [00000F31]
+  name = "TCCR2B"
+  decl file = 00000000
+  decl line = 00000000
+  type = REF 00000D54
+  external = 00000001
+  location (5 bytes) = 008000B1 
+ VARIABLE [00000F43]
+  name = "TCNT2"
+  decl file = 00000000
+  decl line = 00000000
+  type = REF 00000D54
+  external = 00000001
+  location (5 bytes) = 008000B2 
+ VARIABLE [00000F55]
+  name = "OCR2B"
+  decl file = 00000000
+  decl line = 00000000
+  type = REF 00000D54
+  external = 00000001
+  location (5 bytes) = 008000B4 
+ VARIABLE [00000F67]
+  name = "OCR2A"
+  decl file = 00000000
+  decl line = 00000000
+  type = REF 00000D54
+  external = 00000001
+  location (5 bytes) = 008000B3 
+ VARIABLE [00000F79]
+  name = "ASSR"
+  decl file = 00000000
+  decl line = 00000000
+  type = REF 00000D54
+  external = 00000001
+  location (5 bytes) = 008000B6 
+ VARIABLE [00000F8B]
+  name = "GTCCR"
+  decl file = 00000000
+  decl line = 00000000
+  type = REF 00000D54
+  external = 00000001
+  location (5 bytes) = 00800043 
+ VARIABLE [00000F9D]
+  name = "ADMUX"
+  decl file = 00000000
+  decl line = 00000000
+  type = REF 00000D54
+  external = 00000001
+  location (5 bytes) = 0080007C 
+ VARIABLE [00000FAF]
+  name = "ADC"
+  decl file = 00000000
+  decl line = 00000000
+  type = REF 00000D5B
+  external = 00000001
+  location (5 bytes) = 00800078 
+ VARIABLE [00000FC1]
+  name = "ADCSRA"
+  decl file = 00000000
+  decl line = 00000000
+  type = REF 00000D54
+  external = 00000001
+  location (5 bytes) = 0080007A 
+ VARIABLE [00000FD3]
+  name = "ADCSRB"
+  decl file = 00000000
+  decl line = 00000000
+  type = REF 00000D54
+  external = 00000001
+  location (5 bytes) = 0080007B 
+ VARIABLE [00000FE5]
+  name = "DIDR0"
+  decl file = 00000000
+  decl line = 00000000
+  type = REF 00000D54
+  external = 00000001
+  location (5 bytes) = 0080007E 
+ VARIABLE [00000FF7]
+  name = "ACSR"
+  decl file = 00000000
+  decl line = 00000000
+  type = REF 00000D54
+  external = 00000001
+  location (5 bytes) = 00800050 
+ VARIABLE [00001009]
+  name = "DIDR1"
+  decl file = 00000000
+  decl line = 00000000
+  type = REF 00000D54
+  external = 00000001
+  location (5 bytes) = 0080007F 
+ VARIABLE [0000101B]
+  name = "PORTB"
+  decl file = 00000000
+  decl line = 00000000
+  type = REF 00000D54
+  external = 00000001
+  location (5 bytes) = 00800025 
+ VARIABLE [0000102D]
+  name = "DDRB"
+  decl file = 00000000
+  decl line = 00000000
+  type = REF 00000D54
+  external = 00000001
+  location (5 bytes) = 00800024 
+ VARIABLE [0000103F]
+  name = "PINB"
+  decl file = 00000000
+  decl line = 00000000
+  type = REF 00000D54
+  external = 00000001
+  location (5 bytes) = 00800023 
+ VARIABLE [00001051]
+  name = "PORTC"
+  decl file = 00000000
+  decl line = 00000000
+  type = REF 00000D54
+  external = 00000001
+  location (5 bytes) = 00800028 
+ VARIABLE [00001063]
+  name = "DDRC"
+  decl file = 00000000
+  decl line = 00000000
+  type = REF 00000D54
+  external = 00000001
+  location (5 bytes) = 00800027 
+ VARIABLE [00001075]
+  name = "PINC"
+  decl file = 00000000
+  decl line = 00000000
+  type = REF 00000D54
+  external = 00000001
+  location (5 bytes) = 00800026 
+ VARIABLE [00001087]
+  name = "PORTD"
+  decl file = 00000000
+  decl line = 00000000
+  type = REF 00000D54
+  external = 00000001
+  location (5 bytes) = 0080002B 
+ VARIABLE [00001099]
+  name = "DDRD"
+  decl file = 00000000
+  decl line = 00000000
+  type = REF 00000D54
+  external = 00000001
+  location (5 bytes) = 0080002A 
+ VARIABLE [000010AB]
+  name = "PIND"
+  decl file = 00000000
+  decl line = 00000000
+  type = REF 00000D54
+  external = 00000001
+  location (5 bytes) = 00800029 
+ VARIABLE [000010BD]
+  name = "OCR0B"
+  decl file = 00000000
+  decl line = 00000000
+  type = REF 00000D54
+  external = 00000001
+  location (5 bytes) = 00800048 
+ VARIABLE [000010CF]
+  name = "OCR0A"
+  decl file = 00000000
+  decl line = 00000000
+  type = REF 00000D54
+  external = 00000001
+  location (5 bytes) = 00800047 
+ VARIABLE [000010E1]
+  name = "TCNT0"
+  decl file = 00000000
+  decl line = 00000000
+  type = REF 00000D54
+  external = 00000001
+  location (5 bytes) = 00800046 
+ VARIABLE [000010F3]
+  name = "TCCR0B"
+  decl file = 00000000
+  decl line = 00000000
+  type = REF 00000D54
+  external = 00000001
+  location (5 bytes) = 00800045 
+ VARIABLE [00001105]
+  name = "TCCR0A"
+  decl file = 00000000
+  decl line = 00000000
+  type = REF 00000D54
+  external = 00000001
+  location (5 bytes) = 00800044 
+ VARIABLE [00001117]
+  name = "TIMSK0"
+  decl file = 00000000
+  decl line = 00000000
+  type = REF 00000D54
+  external = 00000001
+  location (5 bytes) = 0080006E 
+ VARIABLE [00001129]
+  name = "TIFR0"
+  decl file = 00000000
+  decl line = 00000000
+  type = REF 00000D54
+  external = 00000001
+  location (5 bytes) = 00800035 
+ VARIABLE [0000113B]
+  name = "GTCCR"
+  decl file = 00000000
+  decl line = 00000000
+  type = REF 00000D54
+  external = 00000001
+  location (5 bytes) = 00800043 
+ VARIABLE [0000114D]
+  name = "EICRA"
+  decl file = 00000000
+  decl line = 00000000
+  type = REF 00000D54
+  external = 00000001
+  location (5 bytes) = 00800069 
+ VARIABLE [0000115F]
+  name = "EIMSK"
+  decl file = 00000000
+  decl line = 00000000
+  type = REF 00000D54
+  external = 00000001
+  location (5 bytes) = 0080003D 
+ VARIABLE [00001171]
+  name = "EIFR"
+  decl file = 00000000
+  decl line = 00000000
+  type = REF 00000D54
+  external = 00000001
+  location (5 bytes) = 0080003C 
+ VARIABLE [00001183]
+  name = "PCICR"
+  decl file = 00000000
+  decl line = 00000000
+  type = REF 00000D54
+  external = 00000001
+  location (5 bytes) = 00800068 
+ VARIABLE [00001195]
+  name = "PCMSK2"
+  decl file = 00000000
+  decl line = 00000000
+  type = REF 00000D54
+  external = 00000001
+  location (5 bytes) = 0080006D 
+ VARIABLE [000011A7]
+  name = "PCMSK1"
+  decl file = 00000000
+  decl line = 00000000
+  type = REF 00000D54
+  external = 00000001
+  location (5 bytes) = 0080006C 
+ VARIABLE [000011B9]
+  name = "PCMSK0"
+  decl file = 00000000
+  decl line = 00000000
+  type = REF 00000D54
+  external = 00000001
+  location (5 bytes) = 0080006B 
+ VARIABLE [000011CB]
+  name = "PCIFR"
+  decl file = 00000000
+  decl line = 00000000
+  type = REF 00000D54
+  external = 00000001
+  location (5 bytes) = 0080003B 
+ VARIABLE [000011DD]
+  name = "SPDR"
+  decl file = 00000000
+  decl line = 00000000
+  type = REF 00000D54
+  external = 00000001
+  location (5 bytes) = 0080004E 
+ VARIABLE [000011EF]
+  name = "SPSR"
+  decl file = 00000000
+  decl line = 00000000
+  type = REF 00000D54
+  external = 00000001
+  location (5 bytes) = 0080004D 
+ VARIABLE [00001201]
+  name = "SPCR"
+  decl file = 00000000
+  decl line = 00000000
+  type = REF 00000D54
+  external = 00000001
+  location (5 bytes) = 0080004C 
+ VARIABLE [00001213]
+  name = "WDTCSR"
+  decl file = 00000000
+  decl line = 00000000
+  type = REF 00000D54
+  external = 00000001
+  location (5 bytes) = 00800060 
+ VARIABLE [00001225]
+  name = "PRR"
+  decl file = 00000000
+  decl line = 00000000
+  type = REF 00000D54
+  external = 00000001
+  location (5 bytes) = 00800064 
+ VARIABLE [00001237]
+  name = "OSCCAL"
+  decl file = 00000000
+  decl line = 00000000
+  type = REF 00000D54
+  external = 00000001
+  location (5 bytes) = 00800066 
+ VARIABLE [00001249]
+  name = "CLKPR"
+  decl file = 00000000
+  decl line = 00000000
+  type = REF 00000D54
+  external = 00000001
+  location (5 bytes) = 00800061 
+ VARIABLE [0000125B]
+  name = "SREG"
+  decl file = 00000000
+  decl line = 00000000
+  type = REF 00000D54
+  external = 00000001
+  location (5 bytes) = 0080005F 
+ VARIABLE [0000126D]
+  name = "SP"
+  decl file = 00000000
+  decl line = 00000000
+  type = REF 00000D5B
+  external = 00000001
+  location (5 bytes) = 0080005D 
+ VARIABLE [0000127F]
+  name = "SPMCSR"
+  decl file = 00000000
+  decl line = 00000000
+  type = REF 00000D54
+  external = 00000001
+  location (5 bytes) = 00800057 
+ VARIABLE [00001291]
+  name = "MCUCR"
+  decl file = 00000000
+  decl line = 00000000
+  type = REF 00000D54
+  external = 00000001
+  location (5 bytes) = 00800055 
+ VARIABLE [000012A3]
+  name = "MCUSR"
+  decl file = 00000000
+  decl line = 00000000
+  type = REF 00000D54
+  external = 00000001
+  location (5 bytes) = 00800054 
+ VARIABLE [000012B5]
+  name = "SMCR"
+  decl file = 00000000
+  decl line = 00000000
+  type = REF 00000D54
+  external = 00000001
+  location (5 bytes) = 00800053 
+ VARIABLE [000012C7]
+  name = "GPIOR2"
+  decl file = 00000000
+  decl line = 00000000
+  type = REF 00000D54
+  external = 00000001
+  location (5 bytes) = 0080004B 
+ VARIABLE [000012D9]
+  name = "GPIOR1"
+  decl file = 00000000
+  decl line = 00000000
+  type = REF 00000D54
+  external = 00000001
+  location (5 bytes) = 0080004A 
+ VARIABLE [000012EB]
+  name = "GPIOR0"
+  decl file = 00000000
+  decl line = 00000000
+  type = REF 00000D54
+  external = 00000001
+  location (5 bytes) = 0080003E 
+ VARIABLE [000012FD]
+  name = "EEAR"
+  decl file = 00000000
+  decl line = 00000000
+  type = REF 00000D5B
+  external = 00000001
+  location (5 bytes) = 00800041 
+ VARIABLE [0000130F]
+  name = "EEDR"
+  decl file = 00000000
+  decl line = 00000000
+  type = REF 00000D54
+  external = 00000001
+  location (5 bytes) = 00800040 
+ VARIABLE [00001321]
+  name = "EECR"
+  decl file = 00000000
+  decl line = 00000000
+  type = REF 00000D54
+  external = 00000001
+  location (5 bytes) = 0080003F 
+
+[LINE] Include dir: '..\..\..\..\crt1'
+COMPILE UNIT [0000133F]
+ producer = "GNU C99 5.4.0 -mn-flash=1 -mno-skip-bug -mmcu=avr5 -g2 -Og -std=gnu99 -funsigned-char -funsigned-bitfields -ffunction-sections -fdata-sections -fpack-struct -fshort-enums"
+ language = 0000000C
+ name = ".././adc.c"
+ comp dir = "C:\Users\GGPC\Documents\GitHub\ee209-2021-project-team29\Beck\Final Project Software\Final Project\Final Project\Debug"
+ unknown 55 = 00000000
+ low pc = [00000000]
+ unknown 52 = [00000000]
+ statement list = 00000134
+ BASE TYPE [0000135D]
+  byte size = 00000001
+  encoding = 00000006
+  name = "signed char"
+ TYPEDEF [00001364]
+  name = "uint8_t"
+  decl file = 00000002
+  decl line = 0000007E
+  type = REF 0000136F
+ BASE TYPE [0000136F]
+  byte size = 00000001
+  encoding = 00000008
+  name = "unsigned char"
+ BASE TYPE [00001376]
+  byte size = 00000002
+  encoding = 00000005
+  name = "int"
+ TYPEDEF [0000137D]
+  name = "uint16_t"
+  decl file = 00000002
+  decl line = 00000080
+  type = REF 00001388
+ BASE TYPE [00001388]
+  byte size = 00000002
+  encoding = 00000007
+  name = "unsigned int"
+ BASE TYPE [0000138F]
+  byte size = 00000004
+  encoding = 00000005
+  name = "long int"
+ TYPEDEF [00001396]
+  name = "uint32_t"
+  decl file = 00000002
+  decl line = 00000082
+  type = REF 000013A1
+ BASE TYPE [000013A1]
+  byte size = 00000004
+  encoding = 00000007
+  name = "long unsigned int"
+ BASE TYPE [000013A8]
+  byte size = 00000008
+  encoding = 00000005
+  name = "long long int"
+ BASE TYPE [000013AF]
+  byte size = 00000008
+  encoding = 00000007
+  name = "long long unsigned int"
+ SUBPROGRAM [000013B6]
+  external = 00000001
+  name = "adc_init"
+  decl file = 00000001
+  decl line = 00000005
+  low pc = [000000A6]
+  high pc = [000000BC]
+  frame base (3 bytes) = [R32]+2 
+  unknown 2117 = 00000001
+ SUBPROGRAM [000013CB]
+  external = 00000001
+  name = "adc_read"
+  decl file = 00000001
+  decl line = 0000000C
+  prototyped = 00000001
+  type = REF 0000137D
+  low pc = [00000000]
+  high pc = [00000000]
+  frame base (3 bytes) = [R32]+2 
+  unknown 2117 = 00000001
+  sibling = REF 000013F9
+  FORMAL PARAMETER [000013E9]
+   name = "channel"
+   decl file = 00000001
+   decl line = 0000000C
+   type = REF 00001364
+   location = 00000000
+ SUBPROGRAM [000013F9]
+  external = 00000001
+  name = "adc_convert_mv"
+  decl file = 00000001
+  decl line = 00000019
+  prototyped = 00000001
+  type = REF 0000137D
+  low pc = [00000000]
+  high pc = [00000000]
+  frame base (3 bytes) = [R32]+2 
+  unknown 2117 = 00000001
+  FORMAL PARAMETER [00001413]
+   name = "value"
+   decl file = 00000001
+   decl line = 00000019
+   type = REF 0000137D
+   location = 00000021
+  VARIABLE [00001422]
+   name = "result"
+   decl file = 00000001
+   decl line = 0000001A
+   type = REF 00001396
+   location (12 bytes) = R24 : R25 : R26 : R27 : 
+
+[LINE] Include dir: '..\.'
+[LINE] Include dir: 'c:\program files (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include'
+Line 5: 000000A6-000000A6
+Line 7: 000000A6-000000B0
+Line 9: 000000B0-000000BC
+Line 12: 00000000-00000000
+[LINE] Extended opcode - unknown 4
+Line 17: 00000000-00000000
+Line 20: 00000000-00000000
+Line 22: 00000000-00000000
+Line 23: 00000000-00000000
+Line 25: 00000000-00000000
+Line 26: 00000000-00000000
+Line 28: 00000000-00000000
+COMPILE UNIT [00001447]
+ producer = "GNU C99 5.4.0 -mn-flash=1 -mno-skip-bug -mmcu=avr5 -g2 -Og -std=gnu99 -funsigned-char -funsigned-bitfields -ffunction-sections -fdata-sections -fpack-struct -fshort-enums"
+ language = 0000000C
+ name = ".././main.c"
+ comp dir = "C:\Users\GGPC\Documents\GitHub\ee209-2021-project-team29\Beck\Final Project Software\Final Project\Final Project\Debug"
+ unknown 55 = 00000020
+ low pc = [00000000]
+ unknown 52 = [00000000]
+ statement list = 00000220
+ BASE TYPE [00001465]
+  byte size = 00000001
+  encoding = 00000006
+  name = "signed char"
+ TYPEDEF [0000146C]
+  name = "uint8_t"
+  decl file = 00000002
+  decl line = 0000007E
+  type = REF 00001477
+ BASE TYPE [00001477]
+  byte size = 00000001
+  encoding = 00000008
+  name = "unsigned char"
+ BASE TYPE [0000147E]
+  byte size = 00000002
+  encoding = 00000005
+  name = "int"
+ TYPEDEF [00001485]
+  name = "uint16_t"
+  decl file = 00000002
+  decl line = 00000080
+  type = REF 00001490
+ BASE TYPE [00001490]
+  byte size = 00000002
+  encoding = 00000007
+  name = "unsigned int"
+ BASE TYPE [00001497]
+  byte size = 00000004
+  encoding = 00000005
+  name = "long int"
+ BASE TYPE [0000149E]
+  byte size = 00000004
+  encoding = 00000007
+  name = "long unsigned int"
+ BASE TYPE [000014A5]
+  byte size = 00000008
+  encoding = 00000005
+  name = "long long int"
+ BASE TYPE [000014AC]
+  byte size = 00000008
+  encoding = 00000007
+  name = "long long unsigned int"
+ BASE TYPE [000014B3]
+  byte size = 00000001
+  encoding = 00000008
+  name = "char"
+ SUBPROGRAM [000014BA]
+  external = 00000001
+  name = "__vector_11"
+  decl file = 00000001
+  decl line = 00000022
+  prototyped = 00000001
+  low pc = [000000BC]
+  high pc = [000000DA]
+  frame base = 00000049
+  unknown 2117 = 00000001
+ SUBPROGRAM [000014D0]
+  external = 00000001
+  name = "__vector_1"
+  decl file = 00000001
+  decl line = 00000026
+  prototyped = 00000001
+  low pc = [000000DA]
+  high pc = [000000F8]
+  frame base = 00000085
+  unknown 2117 = 00000001
+ SUBPROGRAM [000014E6]
+  external = 00000001
+  name = "__vector_21"
+  decl file = 00000001
+  decl line = 0000002A
+  prototyped = 00000001
+  low pc = [000000F8]
+  high pc = [00000164]
+  frame base = 000000C1
+  unknown 2117 = 00000001
+ SUBPROGRAM [000014FC]
+  external = 00000001
+  name = "adc_start"
+  decl file = 00000001
+  decl line = 00000072
+  prototyped = 00000001
+  low pc = [00000164]
+  high pc = [000001BA]
+  frame base (3 bytes) = [R32]+2 
+  unknown 2117 = 00000001
+  sibling = REF 00001536
+  FORMAL PARAMETER [00001516]
+   name = "readSelect"
+   decl file = 00000001
+   decl line = 00000072
+   type = REF 0000146C
+   location = 00000124
+  Unknown 4109 [00001525]
+   low pc = [000001B8]
+   abstract origin = REF 0000170F
+   Unknown 410A [0000152E]
+    location (1 bytes) = R24 
+    unknown 2111 = block (2 bytes)
+ SUBPROGRAM [00001536]
+  external = 00000001
+  name = "init_interrupt"
+  decl file = 00000001
+  decl line = 00000093
+  low pc = [000001BA]
+  high pc = [000001CC]
+  frame base (3 bytes) = [R32]+2 
+  unknown 2117 = 00000001
+ SUBPROGRAM [0000154B]
+  external = 00000001
+  name = "main"
+  decl file = 00000001
+  decl line = 00000037
+  prototyped = 00000001
+  type = REF 0000147E
+  unknown 87 = 00000001
+  low pc = [000001CC]
+  high pc = [00000296]
+  frame base (3 bytes) = [R32]+2 
+  unknown 2117 = 00000001
+  sibling = REF 00001630
+  LEXICAL BLOCK [0000156A]
+   low pc = [00000202]
+   high pc = [00000246]
+   sibling = REF 00001585
+   VARIABLE [00001577]
+    name = "i"
+    decl file = 00000001
+    decl line = 00000055
+    type = REF 0000146C
+    location = 00000145
+  LEXICAL BLOCK [00001585]
+   low pc = [00000246]
+   high pc = [00000282]
+   sibling = REF 000015A0
+   VARIABLE [00001592]
+    name = "i"
+    decl file = 00000001
+    decl line = 0000005C
+    type = REF 0000146C
+    location = 00000164
+  Unknown 4109 [000015A0]
+   low pc = [000001D0]
+   abstract origin = REF 0000171C
+  Unknown 4109 [000015A9]
+   low pc = [000001D8]
+   abstract origin = REF 00001729
+   sibling = REF 000015C1
+   Unknown 410A [000015B6]
+    location (6 bytes) = R24 : R25 : 
+    unknown 2111 = block (1 bytes)
+  Unknown 4109 [000015C1]
+   low pc = [000001DC]
+   abstract origin = REF 00001536
+  Unknown 4109 [000015CA]
+   low pc = [000001E6]
+   abstract origin = REF 00001736
+   sibling = REF 000015E2
+   Unknown 410A [000015D7]
+    location (1 bytes) = R24 
+    unknown 2111 = block (1 bytes)
+   Unknown 410A [000015DC]
+    location (1 bytes) = R22 
+    unknown 2111 = block (1 bytes)
+  Unknown 4109 [000015E2]
+   low pc = [000001EC]
+   abstract origin = REF 000014FC
+   sibling = REF 000015F5
+   Unknown 410A [000015EF]
+    location (1 bytes) = R24 
+    unknown 2111 = block (1 bytes)
+  Unknown 4109 [000015F5]
+   low pc = [000001F2]
+   abstract origin = REF 000014FC
+   sibling = REF 00001608
+   Unknown 410A [00001602]
+    location (1 bytes) = R24 
+    unknown 2111 = block (1 bytes)
+  Unknown 4109 [00001608]
+   low pc = [0000028C]
+   abstract origin = REF 00001736
+   sibling = REF 0000161B
+   Unknown 410A [00001615]
+    location (1 bytes) = R22 
+    unknown 2111 = block (1 bytes)
+  Unknown 4109 [0000161B]
+   low pc = [00000294]
+   abstract origin = REF 00001736
+   Unknown 410A [00001624]
+    location (1 bytes) = R24 
+    unknown 2111 = block (1 bytes)
+   Unknown 410A [00001629]
+    location (1 bytes) = R22 
+    unknown 2111 = block (1 bytes)
+ ARRAY TYPE [00001630]
+  type = REF 00001647
+  sibling = REF 00001640
+  SUBRANGE TYPE [00001639]
+   type = REF 00001640
+   upper bound = 00000013
+ BASE TYPE [00001640]
+  byte size = 00000002
+  encoding = 00000007
+  name = "sizetype"
+ VOLATILE TYPE [00001647]
+  type = REF 00001485
+ VARIABLE [0000164C]
+  name = "voltageValues"
+  decl file = 00000001
+  decl line = 00000018
+  type = REF 0000165E
+  external = 00000001
+  location (5 bytes) = 00800172 
+ VOLATILE TYPE [0000165E]
+  type = REF 00001630
+ VARIABLE [00001663]
+  name = "currentValues"
+  decl file = 00000001
+  decl line = 00000019
+  type = REF 00001675
+  external = 00000001
+  location (5 bytes) = 00800149 
+ VOLATILE TYPE [00001675]
+  type = REF 00001630
+ VARIABLE [0000167A]
+  name = "peakVoltage"
+  decl file = 00000001
+  decl line = 0000001A
+  type = REF 00001485
+  external = 00000001
+  location (5 bytes) = 0080019A 
+ VARIABLE [0000168C]
+  name = "peakCurrent"
+  decl file = 00000001
+  decl line = 0000001A
+  type = REF 00001485
+  external = 00000001
+  location (5 bytes) = 00800146 
+ VARIABLE [0000169E]
+  name = "rmsCurrent"
+  decl file = 00000001
+  decl line = 0000001B
+  type = REF 0000146C
+  external = 00000001
+  location (5 bytes) = 00800148 
+ VARIABLE [000016B0]
+  name = "power"
+  decl file = 00000001
+  decl line = 0000001B
+  type = REF 0000146C
+  external = 00000001
+  location (5 bytes) = 00800145 
+ VARIABLE [000016C2]
+  name = "adcCounter"
+  decl file = 00000001
+  decl line = 0000001C
+  type = REF 000016D4
+  external = 00000001
+  location (5 bytes) = 00800171 
+ VOLATILE TYPE [000016D4]
+  type = REF 0000146C
+ VARIABLE [000016D9]
+  name = "currentRead"
+  decl file = 00000001
+  decl line = 0000001D
+  type = REF 000016D4
+  external = 00000001
+  location (5 bytes) = 00800144 
+ VARIABLE [000016EB]
+  name = "zeroCrossingCheck"
+  decl file = 00000001
+  decl line = 0000001E
+  type = REF 000016D4
+  external = 00000001
+  location (5 bytes) = 00800142 
+ VARIABLE [000016FD]
+  name = "oneSecondCheck"
+  decl file = 00000001
+  decl line = 0000001F
+  type = REF 000016D4
+  external = 00000001
+  location (5 bytes) = 00800143 
+ SUBPROGRAM [0000170F]
+  external = 00000001
+  declaration = 00000001
+  unknown 2007 = "usart_transmit"
+  name = "usart_transmit"
+  decl file = 00000003
+  decl line = 00000007
+ SUBPROGRAM [0000171C]
+  external = 00000001
+  declaration = 00000001
+  unknown 2007 = "adc_init"
+  name = "adc_init"
+  decl file = 00000004
+  decl line = 00000006
+ SUBPROGRAM [00001729]
+  external = 00000001
+  declaration = 00000001
+  unknown 2007 = "usart_init"
+  name = "usart_init"
+  decl file = 00000003
+  decl line = 00000006
+ SUBPROGRAM [00001736]
+  external = 00000001
+  declaration = 00000001
+  unknown 2007 = "usart_print"
+  name = "usart_print"
+  decl file = 00000003
+  decl line = 00000008
+
+[LINE] Include dir: '..\.'
+[LINE] Include dir: 'c:\program files (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include'
+Line 34: 000000BC-000000C8
+Line 35: 000000C8-000000CE
+Line 36: 000000CE-000000DA
+Line 38: 000000DA-000000E6
+Line 39: 000000E6-000000EC
+Line 40: 000000EC-000000F8
+Line 42: 000000F8-0000010A
+Line 44: 0000010A-00000112
+Line 45: 00000112-0000012E
+Line 47: 0000012E-00000148
+Line 51: 00000148-00000152
+Line 53: 00000152-00000164
+Line 114: 00000164-00000164
+Line 117: 00000164-00000174
+Line 120: 00000174-00000178
+Line 123: 00000178-0000017C
+Line 126: 0000017C-00000182
+Line 127: 00000182-00000184
+[LINE] Extended opcode - unknown 4
+Line 128: 00000184-00000188
+Line 129: 00000188-00000190
+Line 132: 00000190-00000196
+[LINE] Extended opcode - unknown 4
+Line 135: 00000196-000001A0
+Line 138: 000001A0-000001A8
+Line 143: 000001A8-000001B2
+Line 144: 000001B2-000001BA
+Line 147: 000001BA-000001BA
+Line 149: 000001BA-000001C4
+Line 152: 000001C4-000001CC
+Line 55: 000001CC-000001CC
+Line 57: 000001CC-000001D0
+Line 58: 000001D0-000001D8
+Line 59: 000001D8-000001DC
+Line 61: 000001DC-000001DE
+Line 68: 000001DE-000001E6
+Line 72: 000001E6-000001EC
+Line 75: 000001EC-000001F2
+Line 81: 000001F2-000001FA
+Line 82: 000001FA-00000202
+Line 85: 00000202-00000206
+Line 86: 00000206-00000226
+[LINE] Extended opcode - unknown 4
+Line 87: 00000226-0000023C
+[LINE] Extended opcode - unknown 4
+Line 85: 0000023C-0000023E
+Line 85: 0000023E-00000246
+Line 93: 00000246-00000266
+[LINE] Extended opcode - unknown 4
+Line 94: 00000266-0000027C
+[LINE] Extended opcode - unknown 4
+Line 92: 0000027C-0000027E
+Line 92: 0000027E-00000282
+Line 106: 00000282-0000028C
+Line 109: 0000028C-00000294
+Line 111: 00000294-00000296
+COMPILE UNIT [0000174F]
+ producer = "GNU C99 5.4.0 -mn-flash=1 -mno-skip-bug -mmcu=avr5 -g2 -Og -std=gnu99 -funsigned-char -funsigned-bitfields -ffunction-sections -fdata-sections -fpack-struct -fshort-enums"
+ language = 0000000C
+ name = ".././usart.c"
+ comp dir = "C:\Users\GGPC\Documents\GitHub\ee209-2021-project-team29\Beck\Final Project Software\Final Project\Final Project\Debug"
+ unknown 55 = 00000058
+ low pc = [00000000]
+ unknown 52 = [00000000]
+ statement list = 00000445
+ BASE TYPE [0000176D]
+  byte size = 00000001
+  encoding = 00000006
+  name = "signed char"
+ TYPEDEF [00001774]
+  name = "uint8_t"
+  decl file = 00000002
+  decl line = 0000007E
+  type = REF 0000177F
+ BASE TYPE [0000177F]
+  byte size = 00000001
+  encoding = 00000008
+  name = "unsigned char"
+ BASE TYPE [00001786]
+  byte size = 00000002
+  encoding = 00000005
+  name = "int"
+ TYPEDEF [0000178D]
+  name = "uint16_t"
+  decl file = 00000002
+  decl line = 00000080
+  type = REF 00001798
+ BASE TYPE [00001798]
+  byte size = 00000002
+  encoding = 00000007
+  name = "unsigned int"
+ BASE TYPE [0000179F]
+  byte size = 00000004
+  encoding = 00000005
+  name = "long int"
+ BASE TYPE [000017A6]
+  byte size = 00000004
+  encoding = 00000007
+  name = "long unsigned int"
+ BASE TYPE [000017AD]
+  byte size = 00000008
+  encoding = 00000005
+  name = "long long int"
+ BASE TYPE [000017B4]
+  byte size = 00000008
+  encoding = 00000007
+  name = "long long unsigned int"
+ BASE TYPE [000017BB]
+  byte size = 00000001
+  encoding = 00000008
+  name = "char"
+ SUBPROGRAM [000017C2]
+  external = 00000001
+  name = "usart_init"
+  decl file = 00000001
+  decl line = 0000000D
+  prototyped = 00000001
+  low pc = [00000296]
+  high pc = [000002AC]
+  frame base (3 bytes) = [R32]+2 
+  unknown 2117 = 00000001
+  sibling = REF 000017EF
+  FORMAL PARAMETER [000017DC]
+   name = "ubrr"
+   decl file = 00000001
+   decl line = 0000000D
+   type = REF 0000178D
+   location (6 bytes) = R24 : R25 : 
+ SUBPROGRAM [000017EF]
+  external = 00000001
+  name = "usart_transmit"
+  decl file = 00000001
+  decl line = 00000012
+  prototyped = 00000001
+  low pc = [000002AC]
+  high pc = [000002BA]
+  frame base (3 bytes) = [R32]+2 
+  unknown 2117 = 00000001
+  sibling = REF 00001817
+  FORMAL PARAMETER [00001809]
+   name = "data"
+   decl file = 00000001
+   decl line = 00000012
+   type = REF 00001774
+   location (1 bytes) = R24 
+ SUBPROGRAM [00001817]
+  external = 00000001
+  name = "usart_print"
+  decl file = 00000001
+  decl line = 00000018
+  prototyped = 00000001
+  low pc = [000002BA]
+  high pc = [0000054E]
+  frame base = 00000177
+  unknown 2117 = 00000001
+  sibling = REF 00001A45
+  FORMAL PARAMETER [00001831]
+   name = "number"
+   decl file = 00000001
+   decl line = 00000018
+   type = REF 00001774
+   location = 000002D1
+  FORMAL PARAMETER [00001840]
+   name = "value"
+   decl file = 00000001
+   decl line = 00000018
+   type = REF 00001774
+   location = 0000038D
+  LEXICAL BLOCK [0000184F]
+   low pc = [000002F6]
+   high pc = [00000320]
+   sibling = REF 00001873
+   VARIABLE [0000185C]
+    name = "i"
+    decl file = 00000001
+    decl line = 0000001E
+    type = REF 00001786
+    location = 00000412
+   Unknown 4109 [00001869]
+    low pc = [00000308]
+    abstract origin = REF 000017EF
+  LEXICAL BLOCK [00001873]
+   low pc = [00000340]
+   high pc = [0000036C]
+   sibling = REF 00001897
+   VARIABLE [00001880]
+    name = "i"
+    decl file = 00000001
+    decl line = 0000002A
+    type = REF 00001786
+    location = 00000436
+   Unknown 4109 [0000188D]
+    low pc = [00000352]
+    abstract origin = REF 000017EF
+  LEXICAL BLOCK [00001897]
+   low pc = [00000384]
+   high pc = [000003BA]
+   sibling = REF 000018BB
+   VARIABLE [000018A4]
+    name = "i"
+    decl file = 00000001
+    decl line = 00000030
+    type = REF 00001786
+    location = 0000045A
+   Unknown 4109 [000018B1]
+    low pc = [000003A2]
+    abstract origin = REF 000017EF
+  LEXICAL BLOCK [000018BB]
+   low pc = [000003DA]
+   high pc = [00000406]
+   sibling = REF 000018DF
+   VARIABLE [000018C8]
+    name = "i"
+    decl file = 00000001
+    decl line = 0000003C
+    type = REF 00001786
+    location = 0000047E
+   Unknown 4109 [000018D5]
+    low pc = [000003EC]
+    abstract origin = REF 000017EF
+  LEXICAL BLOCK [000018DF]
+   low pc = [0000041E]
+   high pc = [00000454]
+   sibling = REF 00001903
+   VARIABLE [000018EC]
+    name = "i"
+    decl file = 00000001
+    decl line = 00000042
+    type = REF 00001786
+    location = 000004A2
+   Unknown 4109 [000018F9]
+    low pc = [0000043C]
+    abstract origin = REF 000017EF
+  LEXICAL BLOCK [00001903]
+   low pc = [00000474]
+   high pc = [000004A0]
+   sibling = REF 00001927
+   VARIABLE [00001910]
+    name = "i"
+    decl file = 00000001
+    decl line = 0000004E
+    type = REF 00001786
+    location = 000004C6
+   Unknown 4109 [0000191D]
+    low pc = [00000486]
+    abstract origin = REF 000017EF
+  LEXICAL BLOCK [00001927]
+   low pc = [000004B8]
+   high pc = [000004EE]
+   sibling = REF 0000194B
+   VARIABLE [00001934]
+    name = "i"
+    decl file = 00000001
+    decl line = 00000054
+    type = REF 00001786
+    location = 000004EA
+   Unknown 4109 [00001941]
+    low pc = [000004D6]
+    abstract origin = REF 000017EF
+  LEXICAL BLOCK [0000194B]
+   low pc = [0000050E]
+   high pc = [00000538]
+   sibling = REF 0000196F
+   VARIABLE [00001958]
+    name = "i"
+    decl file = 00000001
+    decl line = 00000060
+    type = REF 00001786
+    location = 0000050E
+   Unknown 4109 [00001965]
+    low pc = [00000520]
+    abstract origin = REF 000017EF
+  Unknown 4109 [0000196F]
+   low pc = [00000326]
+   abstract origin = REF 000017EF
+   sibling = REF 00001982
+   Unknown 410A [0000197C]
+    location (1 bytes) = R24 
+    unknown 2111 = block (1 bytes)
+  Unknown 4109 [00001982]
+   low pc = [0000032C]
+   abstract origin = REF 000017EF
+   sibling = REF 00001995
+   Unknown 410A [0000198F]
+    location (1 bytes) = R24 
+    unknown 2111 = block (1 bytes)
+  Unknown 4109 [00001995]
+   low pc = [00000384]
+   abstract origin = REF 00001A6E
+  Unknown 4109 [0000199E]
+   low pc = [000003C0]
+   abstract origin = REF 000017EF
+   sibling = REF 000019B1
+   Unknown 410A [000019AB]
+    location (1 bytes) = R24 
+    unknown 2111 = block (1 bytes)
+  Unknown 4109 [000019B1]
+   low pc = [000003C6]
+   abstract origin = REF 000017EF
+   sibling = REF 000019C4
+   Unknown 410A [000019BE]
+    location (1 bytes) = R24 
+    unknown 2111 = block (1 bytes)
+  Unknown 4109 [000019C4]
+   low pc = [0000041E]
+   abstract origin = REF 00001A6E
+  Unknown 4109 [000019CD]
+   low pc = [0000045A]
+   abstract origin = REF 000017EF
+   sibling = REF 000019E0
+   Unknown 410A [000019DA]
+    location (1 bytes) = R24 
+    unknown 2111 = block (1 bytes)
+  Unknown 4109 [000019E0]
+   low pc = [00000460]
+   abstract origin = REF 000017EF
+   sibling = REF 000019F3
+   Unknown 410A [000019ED]
+    location (1 bytes) = R24 
+    unknown 2111 = block (1 bytes)
+  Unknown 4109 [000019F3]
+   low pc = [000004B8]
+   abstract origin = REF 00001A6E
+  Unknown 4109 [000019FC]
+   low pc = [000004F4]
+   abstract origin = REF 000017EF
+   sibling = REF 00001A0F
+   Unknown 410A [00001A09]
+    location (1 bytes) = R24 
+    unknown 2111 = block (1 bytes)
+  Unknown 4109 [00001A0F]
+   low pc = [000004FA]
+   abstract origin = REF 000017EF
+   sibling = REF 00001A22
+   Unknown 410A [00001A1C]
+    location (1 bytes) = R24 
+    unknown 2111 = block (1 bytes)
+  Unknown 4109 [00001A22]
+   low pc = [0000053E]
+   abstract origin = REF 000017EF
+   sibling = REF 00001A35
+   Unknown 410A [00001A2F]
+    location (1 bytes) = R24 
+    unknown 2111 = block (1 bytes)
+  Unknown 4109 [00001A35]
+   low pc = [00000544]
+   abstract origin = REF 000017EF
+   Unknown 410A [00001A3E]
+    location (1 bytes) = R24 
+    unknown 2111 = block (1 bytes)
+ ARRAY TYPE [00001A45]
+  type = REF 000017BB
+  sibling = REF 00001A55
+  SUBRANGE TYPE [00001A4E]
+   type = REF 00001A55
+   upper bound = 0000000F
+ BASE TYPE [00001A55]
+  byte size = 00000002
+  encoding = 00000007
+  name = "sizetype"
+ VARIABLE [00001A5C]
+  name = "transmitBuffer"
+  decl file = 00000001
+  decl line = 0000000B
+  type = REF 00001A45
+  external = 00000001
+  location (5 bytes) = 0080019C 
+ SUBPROGRAM [00001A6E]
+  external = 00000001
+  declaration = 00000001
+  unknown 2007 = "sprintf"
+  name = "sprintf"
+  decl file = 00000003
+  decl line = 0000029F
+
+[LINE] Include dir: '..\.'
+[LINE] Include dir: 'c:\program files (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include'
+Line 13: 00000296-00000298
+Line 14: 00000298-000002A2
+Line 15: 000002A2-000002AC
+[LINE] Extended opcode - unknown 4
+Line 18: 000002AC-000002AC
+Line 19: 000002AC-000002B4
+Line 21: 000002B4-000002BA
+Line 24: 000002BA-000002C4
+Line 26: 000002C4-000002E4
+Line 28: 000002E4-000002F6
+[LINE] Extended opcode - unknown 4
+Line 30: 000002F6-000002FC
+[LINE] Extended opcode - unknown 4
+Line 31: 000002FC-00000308
+[LINE] Extended opcode - unknown 4
+Line 30: 00000308-0000030A
+Line 30: 0000030A-00000320
+Line 34: 00000320-00000326
+Line 35: 00000326-0000032C
+Line 37: 0000032C-0000032E
+Line 40: 0000032E-00000340
+[LINE] Extended opcode - unknown 4
+Line 42: 00000340-00000346
+[LINE] Extended opcode - unknown 4
+Line 43: 00000346-00000352
+[LINE] Extended opcode - unknown 4
+Line 42: 00000352-00000356
+Line 42: 00000356-0000036C
+Line 46: 0000036C-00000384
+[LINE] Extended opcode - unknown 4
+Line 48: 00000384-00000396
+[LINE] Extended opcode - unknown 4
+Line 49: 00000396-000003A2
+[LINE] Extended opcode - unknown 4
+Line 48: 000003A2-000003A4
+Line 48: 000003A4-000003BA
+Line 52: 000003BA-000003C0
+Line 53: 000003C0-000003C6
+Line 55: 000003C6-000003C8
+Line 58: 000003C8-000003DA
+[LINE] Extended opcode - unknown 4
+Line 60: 000003DA-000003E0
+[LINE] Extended opcode - unknown 4
+Line 61: 000003E0-000003EC
+[LINE] Extended opcode - unknown 4
+Line 60: 000003EC-000003F0
+Line 60: 000003F0-00000406
+Line 64: 00000406-0000041E
+[LINE] Extended opcode - unknown 4
+Line 66: 0000041E-00000430
+[LINE] Extended opcode - unknown 4
+Line 67: 00000430-0000043C
+[LINE] Extended opcode - unknown 4
+Line 66: 0000043C-0000043E
+Line 66: 0000043E-00000454
+Line 70: 00000454-0000045A
+Line 71: 0000045A-00000460
+Line 73: 00000460-00000462
+Line 76: 00000462-00000474
+[LINE] Extended opcode - unknown 4
+Line 78: 00000474-0000047A
+[LINE] Extended opcode - unknown 4
+Line 79: 0000047A-00000486
+[LINE] Extended opcode - unknown 4
+Line 78: 00000486-0000048A
+Line 78: 0000048A-000004A0
+Line 82: 000004A0-000004B8
+[LINE] Extended opcode - unknown 4
+Line 84: 000004B8-000004CA
+[LINE] Extended opcode - unknown 4
+Line 85: 000004CA-000004D6
+[LINE] Extended opcode - unknown 4
+Line 84: 000004D6-000004D8
+Line 84: 000004D8-000004EE
+Line 88: 000004EE-000004F4
+Line 89: 000004F4-000004FA
+Line 91: 000004FA-000004FC
+Line 94: 000004FC-0000050E
+[LINE] Extended opcode - unknown 4
+Line 96: 0000050E-00000514
+[LINE] Extended opcode - unknown 4
+Line 97: 00000514-00000520
+[LINE] Extended opcode - unknown 4
+Line 96: 00000520-00000522
+Line 96: 00000522-00000538
+Line 100: 00000538-0000053E
+Line 101: 0000053E-00000544
+Line 105: 00000544-0000054E
+Loading Variable '__eeprom'.
+Warning: Entry with reference '3426' not found.
+Warning: Entry with reference '3412' not found.
+BASE TYPE 'uint8_t' : loc=00000D54, type = 2, format = 6, size=1
+Loading Variable 'UDR0'.
+Warning: Entry with reference '3412' not found.
+BASE TYPE 'uint8_t' : loc=00000D54, type = 2, format = 6, size=1
+Loading Variable 'UCSR0A'.
+Warning: Entry with reference '3412' not found.
+BASE TYPE 'uint8_t' : loc=00000D54, type = 2, format = 6, size=1
+Loading Variable 'UCSR0B'.
+Warning: Entry with reference '3412' not found.
+BASE TYPE 'uint8_t' : loc=00000D54, type = 2, format = 6, size=1
+Loading Variable 'UCSR0C'.
+Warning: Entry with reference '3412' not found.
+BASE TYPE 'uint8_t' : loc=00000D54, type = 2, format = 6, size=1
+Loading Variable 'UBRR0'.
+Warning: Entry with reference '3419' not found.
+BASE TYPE 'uint16_t' : loc=00000D5B, type = 3, format = 4, size=2
+Loading Variable 'TWAMR'.
+Warning: Entry with reference '3412' not found.
+BASE TYPE 'uint8_t' : loc=00000D54, type = 2, format = 6, size=1
+Loading Variable 'TWBR'.
+Warning: Entry with reference '3412' not found.
+BASE TYPE 'uint8_t' : loc=00000D54, type = 2, format = 6, size=1
+Loading Variable 'TWCR'.
+Warning: Entry with reference '3412' not found.
+BASE TYPE 'uint8_t' : loc=00000D54, type = 2, format = 6, size=1
+Loading Variable 'TWSR'.
+Warning: Entry with reference '3412' not found.
+BASE TYPE 'uint8_t' : loc=00000D54, type = 2, format = 6, size=1
+Loading Variable 'TWDR'.
+Warning: Entry with reference '3412' not found.
+BASE TYPE 'uint8_t' : loc=00000D54, type = 2, format = 6, size=1
+Loading Variable 'TWAR'.
+Warning: Entry with reference '3412' not found.
+BASE TYPE 'uint8_t' : loc=00000D54, type = 2, format = 6, size=1
+Loading Variable 'TIMSK1'.
+Warning: Entry with reference '3412' not found.
+BASE TYPE 'uint8_t' : loc=00000D54, type = 2, format = 6, size=1
+Loading Variable 'TIFR1'.
+Warning: Entry with reference '3412' not found.
+BASE TYPE 'uint8_t' : loc=00000D54, type = 2, format = 6, size=1
+Loading Variable 'TCCR1A'.
+Warning: Entry with reference '3412' not found.
+BASE TYPE 'uint8_t' : loc=00000D54, type = 2, format = 6, size=1
+Loading Variable 'TCCR1B'.
+Warning: Entry with reference '3412' not found.
+BASE TYPE 'uint8_t' : loc=00000D54, type = 2, format = 6, size=1
+Loading Variable 'TCCR1C'.
+Warning: Entry with reference '3412' not found.
+BASE TYPE 'uint8_t' : loc=00000D54, type = 2, format = 6, size=1
+Loading Variable 'TCNT1'.
+Warning: Entry with reference '3419' not found.
+BASE TYPE 'uint16_t' : loc=00000D5B, type = 3, format = 4, size=2
+Loading Variable 'OCR1A'.
+Warning: Entry with reference '3419' not found.
+BASE TYPE 'uint16_t' : loc=00000D5B, type = 3, format = 4, size=2
+Loading Variable 'OCR1B'.
+Warning: Entry with reference '3419' not found.
+BASE TYPE 'uint16_t' : loc=00000D5B, type = 3, format = 4, size=2
+Loading Variable 'ICR1'.
+Warning: Entry with reference '3419' not found.
+BASE TYPE 'uint16_t' : loc=00000D5B, type = 3, format = 4, size=2
+Loading Variable 'GTCCR'.
+Warning: Entry with reference '3412' not found.
+BASE TYPE 'uint8_t' : loc=00000D54, type = 2, format = 6, size=1
+Loading Variable 'TIMSK2'.
+Warning: Entry with reference '3412' not found.
+BASE TYPE 'uint8_t' : loc=00000D54, type = 2, format = 6, size=1
+Loading Variable 'TIFR2'.
+Warning: Entry with reference '3412' not found.
+BASE TYPE 'uint8_t' : loc=00000D54, type = 2, format = 6, size=1
+Loading Variable 'TCCR2A'.
+Warning: Entry with reference '3412' not found.
+BASE TYPE 'uint8_t' : loc=00000D54, type = 2, format = 6, size=1
+Loading Variable 'TCCR2B'.
+Warning: Entry with reference '3412' not found.
+BASE TYPE 'uint8_t' : loc=00000D54, type = 2, format = 6, size=1
+Loading Variable 'TCNT2'.
+Warning: Entry with reference '3412' not found.
+BASE TYPE 'uint8_t' : loc=00000D54, type = 2, format = 6, size=1
+Loading Variable 'OCR2B'.
+Warning: Entry with reference '3412' not found.
+BASE TYPE 'uint8_t' : loc=00000D54, type = 2, format = 6, size=1
+Loading Variable 'OCR2A'.
+Warning: Entry with reference '3412' not found.
+BASE TYPE 'uint8_t' : loc=00000D54, type = 2, format = 6, size=1
+Loading Variable 'ASSR'.
+Warning: Entry with reference '3412' not found.
+BASE TYPE 'uint8_t' : loc=00000D54, type = 2, format = 6, size=1
+Loading Variable 'GTCCR'.
+Warning: Entry with reference '3412' not found.
+BASE TYPE 'uint8_t' : loc=00000D54, type = 2, format = 6, size=1
+Loading Variable 'ADMUX'.
+Warning: Entry with reference '3412' not found.
+BASE TYPE 'uint8_t' : loc=00000D54, type = 2, format = 6, size=1
+Loading Variable 'ADC'.
+Warning: Entry with reference '3419' not found.
+BASE TYPE 'uint16_t' : loc=00000D5B, type = 3, format = 4, size=2
+Loading Variable 'ADCSRA'.
+Warning: Entry with reference '3412' not found.
+BASE TYPE 'uint8_t' : loc=00000D54, type = 2, format = 6, size=1
+Loading Variable 'ADCSRB'.
+Warning: Entry with reference '3412' not found.
+BASE TYPE 'uint8_t' : loc=00000D54, type = 2, format = 6, size=1
+Loading Variable 'DIDR0'.
+Warning: Entry with reference '3412' not found.
+BASE TYPE 'uint8_t' : loc=00000D54, type = 2, format = 6, size=1
+Loading Variable 'ACSR'.
+Warning: Entry with reference '3412' not found.
+BASE TYPE 'uint8_t' : loc=00000D54, type = 2, format = 6, size=1
+Loading Variable 'DIDR1'.
+Warning: Entry with reference '3412' not found.
+BASE TYPE 'uint8_t' : loc=00000D54, type = 2, format = 6, size=1
+Loading Variable 'PORTB'.
+Warning: Entry with reference '3412' not found.
+BASE TYPE 'uint8_t' : loc=00000D54, type = 2, format = 6, size=1
+Loading Variable 'DDRB'.
+Warning: Entry with reference '3412' not found.
+BASE TYPE 'uint8_t' : loc=00000D54, type = 2, format = 6, size=1
+Loading Variable 'PINB'.
+Warning: Entry with reference '3412' not found.
+BASE TYPE 'uint8_t' : loc=00000D54, type = 2, format = 6, size=1
+Loading Variable 'PORTC'.
+Warning: Entry with reference '3412' not found.
+BASE TYPE 'uint8_t' : loc=00000D54, type = 2, format = 6, size=1
+Loading Variable 'DDRC'.
+Warning: Entry with reference '3412' not found.
+BASE TYPE 'uint8_t' : loc=00000D54, type = 2, format = 6, size=1
+Loading Variable 'PINC'.
+Warning: Entry with reference '3412' not found.
+BASE TYPE 'uint8_t' : loc=00000D54, type = 2, format = 6, size=1
+Loading Variable 'PORTD'.
+Warning: Entry with reference '3412' not found.
+BASE TYPE 'uint8_t' : loc=00000D54, type = 2, format = 6, size=1
+Loading Variable 'DDRD'.
+Warning: Entry with reference '3412' not found.
+BASE TYPE 'uint8_t' : loc=00000D54, type = 2, format = 6, size=1
+Loading Variable 'PIND'.
+Warning: Entry with reference '3412' not found.
+BASE TYPE 'uint8_t' : loc=00000D54, type = 2, format = 6, size=1
+Loading Variable 'OCR0B'.
+Warning: Entry with reference '3412' not found.
+BASE TYPE 'uint8_t' : loc=00000D54, type = 2, format = 6, size=1
+Loading Variable 'OCR0A'.
+Warning: Entry with reference '3412' not found.
+BASE TYPE 'uint8_t' : loc=00000D54, type = 2, format = 6, size=1
+Loading Variable 'TCNT0'.
+Warning: Entry with reference '3412' not found.
+BASE TYPE 'uint8_t' : loc=00000D54, type = 2, format = 6, size=1
+Loading Variable 'TCCR0B'.
+Warning: Entry with reference '3412' not found.
+BASE TYPE 'uint8_t' : loc=00000D54, type = 2, format = 6, size=1
+Loading Variable 'TCCR0A'.
+Warning: Entry with reference '3412' not found.
+BASE TYPE 'uint8_t' : loc=00000D54, type = 2, format = 6, size=1
+Loading Variable 'TIMSK0'.
+Warning: Entry with reference '3412' not found.
+BASE TYPE 'uint8_t' : loc=00000D54, type = 2, format = 6, size=1
+Loading Variable 'TIFR0'.
+Warning: Entry with reference '3412' not found.
+BASE TYPE 'uint8_t' : loc=00000D54, type = 2, format = 6, size=1
+Loading Variable 'GTCCR'.
+Warning: Entry with reference '3412' not found.
+BASE TYPE 'uint8_t' : loc=00000D54, type = 2, format = 6, size=1
+Loading Variable 'EICRA'.
+Warning: Entry with reference '3412' not found.
+BASE TYPE 'uint8_t' : loc=00000D54, type = 2, format = 6, size=1
+Loading Variable 'EIMSK'.
+Warning: Entry with reference '3412' not found.
+BASE TYPE 'uint8_t' : loc=00000D54, type = 2, format = 6, size=1
+Loading Variable 'EIFR'.
+Warning: Entry with reference '3412' not found.
+BASE TYPE 'uint8_t' : loc=00000D54, type = 2, format = 6, size=1
+Loading Variable 'PCICR'.
+Warning: Entry with reference '3412' not found.
+BASE TYPE 'uint8_t' : loc=00000D54, type = 2, format = 6, size=1
+Loading Variable 'PCMSK2'.
+Warning: Entry with reference '3412' not found.
+BASE TYPE 'uint8_t' : loc=00000D54, type = 2, format = 6, size=1
+Loading Variable 'PCMSK1'.
+Warning: Entry with reference '3412' not found.
+BASE TYPE 'uint8_t' : loc=00000D54, type = 2, format = 6, size=1
+Loading Variable 'PCMSK0'.
+Warning: Entry with reference '3412' not found.
+BASE TYPE 'uint8_t' : loc=00000D54, type = 2, format = 6, size=1
+Loading Variable 'PCIFR'.
+Warning: Entry with reference '3412' not found.
+BASE TYPE 'uint8_t' : loc=00000D54, type = 2, format = 6, size=1
+Loading Variable 'SPDR'.
+Warning: Entry with reference '3412' not found.
+BASE TYPE 'uint8_t' : loc=00000D54, type = 2, format = 6, size=1
+Loading Variable 'SPSR'.
+Warning: Entry with reference '3412' not found.
+BASE TYPE 'uint8_t' : loc=00000D54, type = 2, format = 6, size=1
+Loading Variable 'SPCR'.
+Warning: Entry with reference '3412' not found.
+BASE TYPE 'uint8_t' : loc=00000D54, type = 2, format = 6, size=1
+Loading Variable 'WDTCSR'.
+Warning: Entry with reference '3412' not found.
+BASE TYPE 'uint8_t' : loc=00000D54, type = 2, format = 6, size=1
+Loading Variable 'PRR'.
+Warning: Entry with reference '3412' not found.
+BASE TYPE 'uint8_t' : loc=00000D54, type = 2, format = 6, size=1
+Loading Variable 'OSCCAL'.
+Warning: Entry with reference '3412' not found.
+BASE TYPE 'uint8_t' : loc=00000D54, type = 2, format = 6, size=1
+Loading Variable 'CLKPR'.
+Warning: Entry with reference '3412' not found.
+BASE TYPE 'uint8_t' : loc=00000D54, type = 2, format = 6, size=1
+Loading Variable 'SREG'.
+Warning: Entry with reference '3412' not found.
+BASE TYPE 'uint8_t' : loc=00000D54, type = 2, format = 6, size=1
+Loading Variable 'SP'.
+Warning: Entry with reference '3419' not found.
+BASE TYPE 'uint16_t' : loc=00000D5B, type = 3, format = 4, size=2
+Loading Variable 'SPMCSR'.
+Warning: Entry with reference '3412' not found.
+BASE TYPE 'uint8_t' : loc=00000D54, type = 2, format = 6, size=1
+Loading Variable 'MCUCR'.
+Warning: Entry with reference '3412' not found.
+BASE TYPE 'uint8_t' : loc=00000D54, type = 2, format = 6, size=1
+Loading Variable 'MCUSR'.
+Warning: Entry with reference '3412' not found.
+BASE TYPE 'uint8_t' : loc=00000D54, type = 2, format = 6, size=1
+Loading Variable 'SMCR'.
+Warning: Entry with reference '3412' not found.
+BASE TYPE 'uint8_t' : loc=00000D54, type = 2, format = 6, size=1
+Loading Variable 'GPIOR2'.
+Warning: Entry with reference '3412' not found.
+BASE TYPE 'uint8_t' : loc=00000D54, type = 2, format = 6, size=1
+Loading Variable 'GPIOR1'.
+Warning: Entry with reference '3412' not found.
+BASE TYPE 'uint8_t' : loc=00000D54, type = 2, format = 6, size=1
+Loading Variable 'GPIOR0'.
+Warning: Entry with reference '3412' not found.
+BASE TYPE 'uint8_t' : loc=00000D54, type = 2, format = 6, size=1
+Loading Variable 'EEAR'.
+Warning: Entry with reference '3419' not found.
+BASE TYPE 'uint16_t' : loc=00000D5B, type = 3, format = 4, size=2
+Loading Variable 'EEDR'.
+Warning: Entry with reference '3412' not found.
+BASE TYPE 'uint8_t' : loc=00000D54, type = 2, format = 6, size=1
+Loading Variable 'EECR'.
+Warning: Entry with reference '3412' not found.
+BASE TYPE 'uint8_t' : loc=00000D54, type = 2, format = 6, size=1
+Loading Variable 'result'.
+Warning: Entry with reference '5014' not found.
+Warning: Entry with reference '5025' not found.
+BASE TYPE 'long unsigned int' : loc=000013A1, type = 4, format = 4, size=4
+Loading Variable 'voltageValues'.
+Warning: Entry with reference '5726' not found.
+Warning: Entry with reference '5680' not found.
+Warning: Entry with reference '5703' not found.
+Warning: Entry with reference '5253' not found.
+Warning: Entry with reference '5264' not found.
+BASE TYPE 'unsigned int' : loc=00001490, type = 3, format = 4, size=2
+Loading Variable 'currentValues'.
+Warning: Entry with reference '5749' not found.
+Warning: Entry with reference '5680' not found.
+Loading Variable 'peakVoltage'.
+Warning: Entry with reference '5253' not found.
+Warning: Entry with reference '5264' not found.
+BASE TYPE 'unsigned int' : loc=00001490, type = 3, format = 4, size=2
+Loading Variable 'peakCurrent'.
+Warning: Entry with reference '5253' not found.
+Warning: Entry with reference '5264' not found.
+BASE TYPE 'unsigned int' : loc=00001490, type = 3, format = 4, size=2
+Loading Variable 'rmsCurrent'.
+Warning: Entry with reference '5228' not found.
+Warning: Entry with reference '5239' not found.
+BASE TYPE 'unsigned char' : loc=00001477, type = 2, format = 6, size=1
+Loading Variable 'power'.
+Warning: Entry with reference '5228' not found.
+Warning: Entry with reference '5239' not found.
+BASE TYPE 'unsigned char' : loc=00001477, type = 2, format = 6, size=1
+Loading Variable 'adcCounter'.
+Warning: Entry with reference '5844' not found.
+Warning: Entry with reference '5228' not found.
+Warning: Entry with reference '5239' not found.
+BASE TYPE 'unsigned char' : loc=00001477, type = 2, format = 6, size=1
+Loading Variable 'currentRead'.
+Warning: Entry with reference '5844' not found.
+Warning: Entry with reference '5228' not found.
+Warning: Entry with reference '5239' not found.
+BASE TYPE 'unsigned char' : loc=00001477, type = 2, format = 6, size=1
+Loading Variable 'zeroCrossingCheck'.
+Warning: Entry with reference '5844' not found.
+Warning: Entry with reference '5228' not found.
+Warning: Entry with reference '5239' not found.
+BASE TYPE 'unsigned char' : loc=00001477, type = 2, format = 6, size=1
+Loading Variable 'oneSecondCheck'.
+Warning: Entry with reference '5844' not found.
+Warning: Entry with reference '5228' not found.
+Warning: Entry with reference '5239' not found.
+BASE TYPE 'unsigned char' : loc=00001477, type = 2, format = 6, size=1
+Loading Variable 'ubrr'.
+Warning: Entry with reference '6029' not found.
+Warning: Entry with reference '6040' not found.
+BASE TYPE 'unsigned int' : loc=00001798, type = 3, format = 4, size=2
+Loading Variable 'data'.
+Warning: Entry with reference '6004' not found.
+Warning: Entry with reference '6015' not found.
+BASE TYPE 'unsigned char' : loc=0000177F, type = 2, format = 6, size=1
+Loading Variable 'transmitBuffer'.
+Warning: Entry with reference '6725' not found.
+Warning: Entry with reference '6075' not found.
+BASE TYPE 'char' : loc=000017BB, type = 2, format = 6, size=1

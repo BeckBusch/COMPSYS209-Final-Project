@@ -1,0 +1,577 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 8em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD21\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">10/8/2021</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">6:41:18 PM</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:01</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc" class="file"><acronym title="C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc">C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">75</td></tr>
+</table>
+</td>
+</table><a name="ID4YWQPOCQNUCKNC5DNLXAZCXYFK0URDGGLNPWTECOXQFL5DE0MP4D"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDBY2BT1QFTKTCOTL12LXN5NAMRBDRWLSMR1UQSEGQZ3L0GTBWVU4N">Clearance Constraint (Gap=0.4mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID1QYLRK4BA05YJPACTAG45MRWTNO3HBG1TSQFBJFA543EHXEKDQN">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID4YSF3G410IPJCKUUQZY4E2FDEO342IRSREVPL5PIAWBEF2SXN1YN">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDQ23CIYULWYEJNL0XNYGTDNVUIOUDM5RICSW3U1HYQRWN2NW4003">Modified Polygon (Allow modified: No), (Allow shelved: No)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDXT5SM43O2GDDEWGX3YG5OMJEOJIWJ4FEPWYHOJLNAL2HU0J1XSGL">Width Constraint (Min=0.4mm) (Max=10mm) (Preferred=0.6mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDAOPV2LQRGEX4K5KI5UMYNUFQLGJA2WLQOVLWWKPTLMMCLES422BJ">Power Plane Connect Rule(Relief Connect )(Expansion=0.6mm) (Conductor Width=0.6mm) (Air Gap=0.4mm) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDL0R51DDENSULIED01YQ1H2C4HHY0L1ANI0Y1P2F5PATVMDDMAUBJ">Minimum Annular Ring (Minimum=0.076mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDNIKXGTWXHJGIIJSUYY5ZMNP5JCGJ3IIJSIBXDVOJC5AJI3YZ3YJH">Hole Size Constraint (Min=0.5mm) (Max=6mm) (All)</a></td>
+<td class="column2">15</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDLJ44VTRJ4GAPL4CVRCE5BGS40GFDUTBBMKULHFHJ51EJZQB5455D">Hole To Hole Clearance (Gap=0.254mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID1I14TVYGZ3PAGU3HOQUSLAQNIDSRHJXIUERYBRKD5GUHOKBMWWXB">Minimum Solder Mask Sliver (Gap=0.1mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDAOLWHLFSB3IEFCDMFUQEV0AOEFHDBVH1VYPM3VSDSDSELJ5C4HE">Silk To Solder Mask (Clearance=0.1mm) (IsPad),(All)</a></td>
+<td class="column2">19</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDIP0PGYIOJHGLOSUQRJNIWON4DF4PKG1ARNIUYUDOGUQUMW0WDXJJ">Silk to Silk (Clearance=0.1mm) (All),(All)</a></td>
+<td class="column2">35</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDFS5T0WZLJZSZF50GSWOPLXE4XIK3DUKBF0A1UOYWEPGLFTJQFIL">Net Antennae (Tolerance=0mm) (All)</a></td>
+<td class="column2">1</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDNL2UFXDLK0WKCCG2PGHQJCU4VCAU5KFOK32REGNI1RVOQXGKT5PC">Board Clearance Constraint (Gap=0mm) (All)</a></td>
+<td class="column2">5</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDSWVCUXTC0K22PYPAIBDMPOOPGJUA2PQZVKTIWIOITVVZIBGS2QCF">Height Constraint (Min=0mm) (Max=50mm) (Prefered=12.7mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">75</td>
+</tr>
+</table><br><a name="IDNIKXGTWXHJGIIJSUYY5ZMNP5JCGJ3IIJSIBXDVOJC5AJI3YZ3YJH"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Hole Size Constraint (Min=0.5mm) (Max=6mm) (All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4061.875mil|Location2.X=4078.125mil|Location1.Y=2851.875mil|Location2.Y=2868.125mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4061.875mil|Location2.X=4078.125mil|Location1.Y=2851.875mil|Location2.Y=2868.125mil|Absolute=True">Hole Size Constraint: (0.381mm &lt; 0.5mm) Pad Free-3(103.378mm,72.644mm) on Multi-Layer Actual Hole Size = 0.381mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4091.875mil|Location2.X=4108.125mil|Location1.Y=3061.875mil|Location2.Y=3078.125mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4091.875mil|Location2.X=4108.125mil|Location1.Y=3061.875mil|Location2.Y=3078.125mil|Absolute=True">Hole Size Constraint: (0.381mm &lt; 0.5mm) Pad Free-3(104.14mm,77.978mm) on Multi-Layer Actual Hole Size = 0.381mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4721.875mil|Location2.X=4738.125mil|Location1.Y=3351.875mil|Location2.Y=3368.125mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4721.875mil|Location2.X=4738.125mil|Location1.Y=3351.875mil|Location2.Y=3368.125mil|Absolute=True">Hole Size Constraint: (0.381mm &lt; 0.5mm) Pad Free-3(120.142mm,85.344mm) on Multi-Layer Actual Hole Size = 0.381mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5027.307mil|Location2.X=5043.557mil|Location1.Y=3419.843mil|Location2.Y=3436.093mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5027.307mil|Location2.X=5043.557mil|Location1.Y=3419.843mil|Location2.Y=3436.093mil|Absolute=True">Hole Size Constraint: (0.381mm &lt; 0.5mm) Pad Free-3(127.9mm,87.07mm) on Multi-Layer Actual Hole Size = 0.381mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5181.875mil|Location2.X=5198.125mil|Location1.Y=3221.875mil|Location2.Y=3238.125mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5181.875mil|Location2.X=5198.125mil|Location1.Y=3221.875mil|Location2.Y=3238.125mil|Absolute=True">Hole Size Constraint: (0.381mm &lt; 0.5mm) Pad Free-3(131.826mm,82.042mm) on Multi-Layer Actual Hole Size = 0.381mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5187.308mil|Location2.X=5203.558mil|Location1.Y=3311.875mil|Location2.Y=3328.125mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5187.308mil|Location2.X=5203.558mil|Location1.Y=3311.875mil|Location2.Y=3328.125mil|Absolute=True">Hole Size Constraint: (0.381mm &lt; 0.5mm) Pad Free-3(131.964mm,84.328mm) on Multi-Layer Actual Hole Size = 0.381mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5241.875mil|Location2.X=5258.125mil|Location1.Y=3381.875mil|Location2.Y=3398.125mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5241.875mil|Location2.X=5258.125mil|Location1.Y=3381.875mil|Location2.Y=3398.125mil|Absolute=True">Hole Size Constraint: (0.381mm &lt; 0.5mm) Pad Free-3(133.35mm,86.106mm) on Multi-Layer Actual Hole Size = 0.381mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5268.166mil|Location2.X=5284.416mil|Location1.Y=4725.584mil|Location2.Y=4741.834mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5268.166mil|Location2.X=5284.416mil|Location1.Y=4725.584mil|Location2.Y=4741.834mil|Absolute=True">Hole Size Constraint: (0.381mm &lt; 0.5mm) Pad Free-3(134.018mm,120.236mm) on Multi-Layer Actual Hole Size = 0.381mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5321.875mil|Location2.X=5338.125mil|Location1.Y=2929.803mil|Location2.Y=2946.053mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5321.875mil|Location2.X=5338.125mil|Location1.Y=2929.803mil|Location2.Y=2946.053mil|Absolute=True">Hole Size Constraint: (0.381mm &lt; 0.5mm) Pad Free-3(135.382mm,74.623mm) on Multi-Layer Actual Hole Size = 0.381mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2981.875mil|Location2.X=2998.125mil|Location1.Y=4401.875mil|Location2.Y=4418.125mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2981.875mil|Location2.X=2998.125mil|Location1.Y=4401.875mil|Location2.Y=4418.125mil|Absolute=True">Hole Size Constraint: (0.381mm &lt; 0.5mm) Pad Free-3(75.946mm,112.014mm) on Multi-Layer Actual Hole Size = 0.381mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3401.875mil|Location2.X=3418.125mil|Location1.Y=3071.875mil|Location2.Y=3088.125mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3401.875mil|Location2.X=3418.125mil|Location1.Y=3071.875mil|Location2.Y=3088.125mil|Absolute=True">Hole Size Constraint: (0.381mm &lt; 0.5mm) Pad Free-3(86.614mm,78.232mm) on Multi-Layer Actual Hole Size = 0.381mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3621.875mil|Location2.X=3638.125mil|Location1.Y=2951.875mil|Location2.Y=2968.125mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3621.875mil|Location2.X=3638.125mil|Location1.Y=2951.875mil|Location2.Y=2968.125mil|Absolute=True">Hole Size Constraint: (0.381mm &lt; 0.5mm) Pad Free-3(92.202mm,75.184mm) on Multi-Layer Actual Hole Size = 0.381mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3901.875mil|Location2.X=3918.125mil|Location1.Y=3721.875mil|Location2.Y=3738.125mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3901.875mil|Location2.X=3918.125mil|Location1.Y=3721.875mil|Location2.Y=3738.125mil|Absolute=True">Hole Size Constraint: (0.381mm &lt; 0.5mm) Pad Free-3(99.314mm,94.742mm) on Multi-Layer Actual Hole Size = 0.381mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3864.375mil|Location2.X=4115.625mil|Location1.Y=1824.375mil|Location2.Y=2075.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3864.375mil|Location2.X=4115.625mil|Location1.Y=1824.375mil|Location2.Y=2075.625mil|Absolute=True">Hole Size Constraint: (6.35mm &gt; 6mm) Pad P1-1(101.346mm,49.53mm) on Multi-Layer Actual Hole Size = 6.35mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2964.375mil|Location2.X=3215.625mil|Location1.Y=1824.375mil|Location2.Y=2075.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2964.375mil|Location2.X=3215.625mil|Location1.Y=1824.375mil|Location2.Y=2075.625mil|Absolute=True">Hole Size Constraint: (6.35mm &gt; 6mm) Pad P1-2(78.486mm,49.53mm) on Multi-Layer Actual Hole Size = 6.35mm</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDAOLWHLFSB3IEFCDMFUQEV0AOEFHDBVH1VYPM3VSDSDSELJ5C4HE"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Silk To Solder Mask (Clearance=0.1mm) (IsPad),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5387.344mil|Location2.X=5390.969mil|Location1.Y=2224.279mil|Location2.Y=2227.903mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5387.344mil|Location2.X=5390.969mil|Location1.Y=2224.279mil|Location2.Y=2227.903mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.1mm) Between Arc (137.678mm,59.436mm) on Top Overlay And Pad R2-2(136.906mm,55.692mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3384.587mil|Location2.X=3388.211mil|Location1.Y=3770.744mil|Location2.Y=3774.368mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3384.587mil|Location2.X=3388.211mil|Location1.Y=3770.744mil|Location2.Y=3774.368mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.1mm) Between Pad C14-1(86.614mm,96.306mm) on Multi-Layer And Text "R19_1" (83.515mm,95.021mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2576.175mil|Location2.X=2579.799mil|Location1.Y=2450.171mil|Location2.Y=2453.796mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2576.175mil|Location2.X=2579.799mil|Location1.Y=2450.171mil|Location2.Y=2453.796mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.1mm) Between Pad C2-2(65.318mm,62.738mm) on Multi-Layer And Text "C4" (64.465mm,61.011mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5396.687mil|Location2.X=5400.312mil|Location1.Y=2549.64mil|Location2.Y=2553.264mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5396.687mil|Location2.X=5400.312mil|Location1.Y=2549.64mil|Location2.Y=2553.264mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.1mm) Between Pad C5-1(137.922mm,65.532mm) on Multi-Layer And Text "D2" (134.823mm,63.297mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3604.175mil|Location2.X=3607.799mil|Location1.Y=2474.105mil|Location2.Y=2477.73mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3604.175mil|Location2.X=3607.799mil|Location1.Y=2474.105mil|Location2.Y=2477.73mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.1mm) Between Pad C7-1(91.694mm,63.714mm) on Multi-Layer And Text "D1" (90.576mm,62.332mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5387.175mil|Location2.X=5390.799mil|Location1.Y=2305.171mil|Location2.Y=2308.796mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5387.175mil|Location2.X=5390.799mil|Location1.Y=2305.171mil|Location2.Y=2308.796mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.1mm) Between Pad D2-2(137.678mm,58.166mm) on Multi-Layer And Text "R2" (135.865mm,57.328mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4065.668mil|Location2.X=4069.293mil|Location1.Y=2844.503mil|Location2.Y=2848.128mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4065.668mil|Location2.X=4069.293mil|Location1.Y=2844.503mil|Location2.Y=2848.128mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.1mm) Between Pad Free-3(103.378mm,72.644mm) on Multi-Layer And Track (103.314mm,68.866mm)(103.314mm,72.866mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4054.156mil|Location2.X=4057.781mil|Location1.Y=2866.928mil|Location2.Y=2870.552mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4054.156mil|Location2.X=4057.781mil|Location1.Y=2866.928mil|Location2.Y=2870.552mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.1mm) Between Pad Free-3(103.378mm,72.644mm) on Multi-Layer And Track (95.314mm,72.866mm)(103.314mm,72.866mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4113.163mil|Location2.X=4116.788mil|Location1.Y=3058.236mil|Location2.Y=3061.861mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4113.163mil|Location2.X=4116.788mil|Location1.Y=3058.236mil|Location2.Y=3061.861mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.1mm) Between Pad Free-3(104.14mm,77.978mm) on Multi-Layer And Track (104.52mm,73.218mm)(104.52mm,79.314mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5234.9mil|Location2.X=5238.524mil|Location1.Y=3399.772mil|Location2.Y=3403.397mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5234.9mil|Location2.X=5238.524mil|Location1.Y=3399.772mil|Location2.Y=3403.397mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.1mm) Between Pad Free-3(133.35mm,86.106mm) on Multi-Layer And Text "C9" (132.588mm,86.4mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3407.407mil|Location2.X=3412.593mil|Location1.Y=3061.872mil|Location2.Y=3067.059mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3407.407mil|Location2.X=3412.593mil|Location1.Y=3061.872mil|Location2.Y=3067.059mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.027mm &lt; 0.1mm) Between Pad Free-3(86.614mm,78.232mm) on Multi-Layer And Track (85.598mm,77.724mm)(87.63mm,77.724mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.027mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3408.188mil|Location2.X=3411.812mil|Location1.Y=3071.686mil|Location2.Y=3075.311mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3408.188mil|Location2.X=3411.812mil|Location1.Y=3071.686mil|Location2.Y=3075.311mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.1mm) Between Pad Free-3(86.614mm,78.232mm) on Multi-Layer And Track (86.614mm,77.724mm)(86.614mm,78.176mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4281.188mil|Location2.X=4284.812mil|Location1.Y=4071.005mil|Location2.Y=4074.63mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4281.188mil|Location2.X=4284.812mil|Location1.Y=4071.005mil|Location2.Y=4074.63mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.1mm) Between Pad R11_1-2(109.408mm,103.632mm) on Multi-Layer And Text "R7_1" (108.788mm,102.819mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3378.027mil|Location2.X=3381.652mil|Location1.Y=3241.988mil|Location2.Y=3245.613mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3378.027mil|Location2.X=3381.652mil|Location1.Y=3241.988mil|Location2.Y=3245.613mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.1mm) Between Pad R19_1-2(86.614mm,82.738mm) on Multi-Layer And Text "R19_2" (83.349mm,81.559mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2608.535mil|Location2.X=2612.16mil|Location1.Y=3545.554mil|Location2.Y=3549.179mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2608.535mil|Location2.X=2612.16mil|Location1.Y=3545.554mil|Location2.Y=3549.179mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.1mm) Between Pad R20-2(66.548mm,90.866mm) on Multi-Layer And Text "P2" (64.059mm,89.383mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4737.434mil|Location2.X=4741.059mil|Location1.Y=3925.362mil|Location2.Y=3928.987mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4737.434mil|Location2.X=4741.059mil|Location1.Y=3925.362mil|Location2.Y=3928.987mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.1mm) Between Pad R7_1-1(120.208mm,100.584mm) on Multi-Layer And Text "R7_2" (116.84mm,99.212mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4287.188mil|Location2.X=4290.812mil|Location1.Y=3938.285mil|Location2.Y=3941.91mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4287.188mil|Location2.X=4290.812mil|Location1.Y=3938.285mil|Location2.Y=3941.91mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.1mm) Between Pad R7_1-2(109.408mm,100.584mm) on Multi-Layer And Text "R11_2" (108.941mm,99.898mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4272.819mil|Location2.X=4276.444mil|Location1.Y=3958.027mil|Location2.Y=3961.652mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4272.819mil|Location2.X=4276.444mil|Location1.Y=3958.027mil|Location2.Y=3961.652mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.1mm) Between Pad R7_1-2(109.408mm,100.584mm) on Multi-Layer And Text "TP_Offset" (101.411mm,99.913mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5136.033mil|Location2.X=5139.657mil|Location1.Y=2568.666mil|Location2.Y=2572.29mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5136.033mil|Location2.X=5139.657mil|Location1.Y=2568.666mil|Location2.Y=2572.29mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.1mm) Between Pad U2-18(130.302mm,66.04mm) on Multi-Layer And Text "R8_2" (130.501mm,65.181mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDIP0PGYIOJHGLOSUQRJNIWON4DF4PKG1ARNIUYUDOGUQUMW0WDXJJ"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Silk to Silk (Clearance=0.1mm) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4124.866mil|Location2.X=4128.491mil|Location1.Y=3788.545mil|Location2.Y=3792.17mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4124.866mil|Location2.X=4128.491mil|Location1.Y=3788.545mil|Location2.Y=3792.17mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.1mm) Between Arc (105.41mm,97.536mm) on Top Overlay And Text "C10" (104.318mm,95.275mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5347.188mil|Location2.X=5350.812mil|Location1.Y=2255.188mil|Location2.Y=2258.812mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5347.188mil|Location2.X=5350.812mil|Location1.Y=2255.188mil|Location2.Y=2258.812mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.1mm) Between Arc (137.678mm,59.436mm) on Top Overlay And Text "R2" (135.865mm,57.328mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5306.188mil|Location2.X=5309.812mil|Location1.Y=2550.168mil|Location2.Y=2553.793mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5306.188mil|Location2.X=5309.812mil|Location1.Y=2550.168mil|Location2.Y=2553.793mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.1mm) Between Arc (137.922mm,66.782mm) on Top Overlay And Text "D2" (134.823mm,63.297mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5567.007mil|Location2.X=5572.194mil|Location1.Y=2653.918mil|Location2.Y=2659.105mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5567.007mil|Location2.X=5572.194mil|Location1.Y=2653.918mil|Location2.Y=2659.105mil|Absolute=True">Silk To Silk Clearance Constraint: (0.026mm &lt; 0.1mm) Between Arc (137.922mm,66.782mm) on Top Overlay And Text "TP_Vif" (143.129mm,67.502mm) on Top Overlay Silk Text to Silk Clearance [0.026mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2843.188mil|Location2.X=2846.812mil|Location1.Y=2293.158mil|Location2.Y=2296.782mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2843.188mil|Location2.X=2846.812mil|Location1.Y=2293.158mil|Location2.Y=2296.782mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.1mm) Between Text "+" (72.218mm,59.042mm) on Top Overlay And Text "P1" (72.263mm,56.871mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3335.188mil|Location2.X=3338.812mil|Location1.Y=4099.448mil|Location2.Y=4103.072mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3335.188mil|Location2.X=3338.812mil|Location1.Y=4099.448mil|Location2.Y=4103.072mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.1mm) Between Text "C14" (84.76mm,103.657mm) on Top Overlay And Track (81.344mm,104.172mm)(89.344mm,104.172mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2545.403mil|Location2.X=2550.59mil|Location1.Y=2393.505mil|Location2.Y=2398.692mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2545.403mil|Location2.X=2550.59mil|Location1.Y=2393.505mil|Location2.Y=2398.692mil|Absolute=True">Silk To Silk Clearance Constraint: (0.046mm &lt; 0.1mm) Between Text "C4" (64.465mm,61.011mm) on Top Overlay And Track (63.818mm,60.738mm)(71.818mm,60.738mm) on Top Overlay Silk Text to Silk Clearance [0.046mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5369.448mil|Location2.X=5373.072mil|Location1.Y=2859.168mil|Location2.Y=2862.793mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5369.448mil|Location2.X=5373.072mil|Location1.Y=2859.168mil|Location2.Y=2862.793mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.1mm) Between Text "C5" (134.569mm,71.145mm) on Top Overlay And Track (136.43mm,71.184mm)(136.43mm,79.184mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5396.155mil|Location2.X=5399.78mil|Location1.Y=2800.707mil|Location2.Y=2804.332mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5396.155mil|Location2.X=5399.78mil|Location1.Y=2800.707mil|Location2.Y=2804.332mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.1mm) Between Text "C5" (134.569mm,71.145mm) on Top Overlay And Track (136.43mm,71.184mm)(140.43mm,71.184mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3564.188mil|Location2.X=3567.812mil|Location1.Y=2447.557mil|Location2.Y=2451.182mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3564.188mil|Location2.X=3567.812mil|Location1.Y=2447.557mil|Location2.Y=2451.182mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.1mm) Between Text "D1" (90.576mm,62.332mm) on Top Overlay And Track (89.694mm,62.214mm)(93.694mm,62.214mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4333.178mil|Location2.X=4336.803mil|Location1.Y=2338.188mil|Location2.Y=2341.812mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4333.178mil|Location2.X=4336.803mil|Location1.Y=2338.188mil|Location2.Y=2341.812mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.1mm) Between Text "J1" (109.347mm,58.242mm) on Top Overlay And Track (106.426mm,59.436mm)(112.522mm,59.436mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4287.188mil|Location2.X=4290.812mil|Location1.Y=3951.468mil|Location2.Y=3955.092mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4287.188mil|Location2.X=4290.812mil|Location1.Y=3951.468mil|Location2.Y=3955.092mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.1mm) Between Text "R11_2" (108.941mm,99.898mm) on Top Overlay And Text "TP_Offset" (101.411mm,99.913mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4398.188mil|Location2.X=4401.812mil|Location1.Y=3924.628mil|Location2.Y=3928.253mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4398.188mil|Location2.X=4401.812mil|Location1.Y=3924.628mil|Location2.Y=3928.253mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.1mm) Between Text "R11_2" (108.941mm,99.898mm) on Top Overlay And Track (111.76mm,99.568mm)(111.76mm,101.6mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4398.188mil|Location2.X=4401.812mil|Location1.Y=3918.188mil|Location2.Y=3921.812mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4398.188mil|Location2.X=4401.812mil|Location1.Y=3918.188mil|Location2.Y=3921.812mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.1mm) Between Text "R11_2" (108.941mm,99.898mm) on Top Overlay And Track (111.76mm,99.568mm)(117.856mm,99.568mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3329.448mil|Location2.X=3333.072mil|Location1.Y=3739.19mil|Location2.Y=3742.815mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3329.448mil|Location2.X=3333.072mil|Location1.Y=3739.19mil|Location2.Y=3742.815mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.1mm) Between Text "R19_1" (83.515mm,95.021mm) on Top Overlay And Track (84.614mm,94.806mm)(84.614mm,102.806mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3329.448mil|Location2.X=3333.072mil|Location1.Y=3730.707mil|Location2.Y=3734.332mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3329.448mil|Location2.X=3333.072mil|Location1.Y=3730.707mil|Location2.Y=3734.332mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.1mm) Between Text "R19_1" (83.515mm,95.021mm) on Top Overlay And Track (84.614mm,94.806mm)(88.614mm,94.806mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3273.783mil|Location2.X=3277.408mil|Location1.Y=3201.146mil|Location2.Y=3204.771mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3273.783mil|Location2.X=3277.408mil|Location1.Y=3201.146mil|Location2.Y=3204.771mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.1mm) Between Text "R19_2" (83.349mm,81.559mm) on Top Overlay And Text "TP_5V" (79.201mm,80.355mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4071.188mil|Location2.X=4074.812mil|Location1.Y=2498.188mil|Location2.Y=2501.812mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4071.188mil|Location2.X=4074.812mil|Location1.Y=2498.188mil|Location2.Y=2501.812mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.1mm) Between Text "R2" (103.454mm,62.509mm) on Top Overlay And Track (103.18mm,63.5mm)(103.632mm,63.5mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4078.188mil|Location2.X=4081.812mil|Location1.Y=2459.188mil|Location2.Y=2462.812mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4078.188mil|Location2.X=4081.812mil|Location1.Y=2459.188mil|Location2.Y=2462.812mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.1mm) Between Text "R2" (103.454mm,62.509mm) on Top Overlay And Track (103.632mm,62.484mm)(103.632mm,64.516mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4078.188mil|Location2.X=4081.812mil|Location1.Y=2458.188mil|Location2.Y=2461.812mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4078.188mil|Location2.X=4081.812mil|Location1.Y=2458.188mil|Location2.Y=2461.812mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.1mm) Between Text "R2" (103.454mm,62.509mm) on Top Overlay And Track (103.632mm,62.484mm)(109.728mm,62.484mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4103.188mil|Location2.X=4106.812mil|Location1.Y=2519.168mil|Location2.Y=2522.793mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4103.188mil|Location2.X=4106.812mil|Location1.Y=2519.168mil|Location2.Y=2522.793mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.1mm) Between Text "R2" (103.454mm,62.509mm) on Top Overlay And Track (104.267mm,62.484mm)(104.267mm,64.516mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5347.188mil|Location2.X=5350.812mil|Location1.Y=2323.818mil|Location2.Y=2327.442mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5347.188mil|Location2.X=5350.812mil|Location1.Y=2323.818mil|Location2.Y=2327.442mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.1mm) Between Text "R2" (135.865mm,57.328mm) on Top Overlay And Track (135.146mm,59.071mm)(136.416mm,59.071mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5343.881mil|Location2.X=5347.505mil|Location1.Y=2323.818mil|Location2.Y=2327.442mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5343.881mil|Location2.X=5347.505mil|Location1.Y=2323.818mil|Location2.Y=2327.442mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.1mm) Between Text "R2" (135.865mm,57.328mm) on Top Overlay And Track (135.146mm,59.706mm)(135.781mm,59.071mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5343.881mil|Location2.X=5347.505mil|Location1.Y=2293.818mil|Location2.Y=2297.442mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5343.881mil|Location2.X=5347.505mil|Location1.Y=2293.818mil|Location2.Y=2297.442mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.1mm) Between Text "R2" (135.865mm,57.328mm) on Top Overlay And Track (135.781mm,58.309mm)(135.781mm,60.595mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5343.881mil|Location2.X=5347.505mil|Location1.Y=2323.818mil|Location2.Y=2327.442mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5343.881mil|Location2.X=5347.505mil|Location1.Y=2323.818mil|Location2.Y=2327.442mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.1mm) Between Text "R2" (135.865mm,57.328mm) on Top Overlay And Track (135.781mm,59.071mm)(136.416mm,59.706mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4581.188mil|Location2.X=4584.812mil|Location1.Y=2458.188mil|Location2.Y=2461.812mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4581.188mil|Location2.X=4584.812mil|Location1.Y=2458.188mil|Location2.Y=2461.812mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.1mm) Between Text "R4" (116.408mm,62.509mm) on Top Overlay And Track (115.824mm,62.484mm)(121.92mm,62.484mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4583.188mil|Location2.X=4586.812mil|Location1.Y=2459.188mil|Location2.Y=2462.812mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4583.188mil|Location2.X=4586.812mil|Location1.Y=2459.188mil|Location2.Y=2462.812mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.1mm) Between Text "R4" (116.408mm,62.509mm) on Top Overlay And Track (116.459mm,62.484mm)(116.459mm,64.516mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4398.188mil|Location2.X=4401.812mil|Location1.Y=4078.188mil|Location2.Y=4081.812mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4398.188mil|Location2.X=4401.812mil|Location1.Y=4078.188mil|Location2.Y=4081.812mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.1mm) Between Text "R7_1" (108.788mm,102.819mm) on Top Overlay And Track (111.308mm,103.632mm)(111.76mm,103.632mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4398.188mil|Location2.X=4401.812mil|Location1.Y=4046.188mil|Location2.Y=4049.812mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4398.188mil|Location2.X=4401.812mil|Location1.Y=4046.188mil|Location2.Y=4049.812mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.1mm) Between Text "R7_1" (108.788mm,102.819mm) on Top Overlay And Track (111.76mm,102.616mm)(111.76mm,104.648mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4399.26mil|Location2.X=4402.885mil|Location1.Y=4038.188mil|Location2.Y=4041.812mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4399.26mil|Location2.X=4402.885mil|Location1.Y=4038.188mil|Location2.Y=4041.812mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.1mm) Between Text "R7_1" (108.788mm,102.819mm) on Top Overlay And Track (111.76mm,102.616mm)(117.856mm,102.616mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4598.188mil|Location2.X=4601.812mil|Location1.Y=3918.188mil|Location2.Y=3921.812mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4598.188mil|Location2.X=4601.812mil|Location1.Y=3918.188mil|Location2.Y=3921.812mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.1mm) Between Text "R7_2" (116.84mm,99.212mm) on Top Overlay And Track (111.76mm,99.568mm)(117.856mm,99.568mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4638.188mil|Location2.X=4641.812mil|Location1.Y=3943.545mil|Location2.Y=3947.17mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4638.188mil|Location2.X=4641.812mil|Location1.Y=3943.545mil|Location2.Y=3947.17mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.1mm) Between Text "R7_2" (116.84mm,99.212mm) on Top Overlay And Track (117.856mm,99.568mm)(117.856mm,101.6mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4422.887mil|Location2.X=4428.074mil|Location1.Y=3396.404mil|Location2.Y=3401.591mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4422.887mil|Location2.X=4428.074mil|Location1.Y=3396.404mil|Location2.Y=3401.591mil|Absolute=True">Silk To Silk Clearance Constraint: (0.024mm &lt; 0.1mm) Between Text "R8_1" (110.602mm,85.501mm) on Top Overlay And Track (112.519mm,85.85mm)(112.519mm,93.85mm) on Top Overlay Silk Text to Silk Clearance [0.024mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4477.224mil|Location2.X=4480.849mil|Location1.Y=3378.125mil|Location2.Y=3381.749mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4477.224mil|Location2.X=4480.849mil|Location1.Y=3378.125mil|Location2.Y=3381.749mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.1mm) Between Text "R8_1" (110.602mm,85.501mm) on Top Overlay And Track (112.519mm,85.85mm)(116.519mm,85.85mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5568.126mil|Location2.X=5571.751mil|Location1.Y=3503.196mil|Location2.Y=3506.82mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5568.126mil|Location2.X=5571.751mil|Location1.Y=3503.196mil|Location2.Y=3506.82mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.1mm) Between Text "TP_GND1" (131.828mm,89.027mm) on Top Overlay And Text "TP_Vvf" (143.129mm,83.313mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDFS5T0WZLJZSZF50GSWOPLXE4XIK3DUKBF0A1UOYWEPGLFTJQFIL"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Net Antennae (Tolerance=0mm) (All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5196.815mil|Location2.X=5252.372mil|Location1.Y=1985.456mil|Location2.Y=2073.161mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5196.815mil|Location2.X=5252.372mil|Location1.Y=1985.456mil|Location2.Y=2073.161mil|Absolute=True">Net Antennae: Track (132.588mm,51.019mm)(132.588mm,52.766mm) on Top Layer </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDNL2UFXDLK0WKCCG2PGHQJCU4VCAU5KFOK32REGNI1RVOQXGKT5PC"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Board Clearance Constraint (Gap=0mm) (All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2953.922mil|Location2.X=3001.875mil|Location1.Y=6531.929mil|Location2.Y=6546.052mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2953.922mil|Location2.X=3001.875mil|Location1.Y=6531.929mil|Location2.Y=6546.052mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.5mm) Between Board Edge And Text "P2" (73.939mm,165.329mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5213.954mil|Location2.X=5261.908mil|Location1.Y=5347.929mil|Location2.Y=5362.052mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5213.954mil|Location2.X=5261.908mil|Location1.Y=5347.929mil|Location2.Y=5362.052mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.5mm) Between Board Edge And Text "U2" (133.883mm,135.255mm) on Bottom Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4312.938mil|Location2.X=4360.892mil|Location1.Y=5123.145mil|Location2.Y=5137.268mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4312.938mil|Location2.X=4360.892mil|Location1.Y=5123.145mil|Location2.Y=5137.268mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.5mm) Between Board Edge And Track (109.728mm,118.491mm)(109.728mm,133.477mm) on Bottom Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3837.938mil|Location2.X=3885.892mil|Location1.Y=5123.145mil|Location2.Y=5137.268mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3837.938mil|Location2.X=3885.892mil|Location1.Y=5123.145mil|Location2.Y=5137.268mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.5mm) Between Board Edge And Track (97.663mm,118.549mm)(97.663mm,133.477mm) on Bottom Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4075.438mil|Location2.X=4123.392mil|Location1.Y=5247.938mil|Location2.Y=5262.062mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\User\Documents\GitHub\ee209-2021-project-team29\Danya\Team29TH.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4075.438mil|Location2.X=4123.392mil|Location1.Y=5247.938mil|Location2.Y=5262.062mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.5mm) Between Board Edge And Track (97.663mm,133.477mm)(109.728mm,133.477mm) on Bottom Overlay </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>
